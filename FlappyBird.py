@@ -59,3 +59,8 @@ def createBluredImg(input_img, output_img, ksize=(7, 7), sigmaX=0):
     except:
         return False
     return True
+
+def collision(maskFirst, maskSecond, maskFirstPos_x, maskFirstPos_y, maskSecondPos_x, maskSecondPos_y):
+	offset = (int(maskFirstPos_x - maskSecondPos_x), int(maskFirstPos_y - maskSecondPos_y))
+	result = maskSecond.overlap(maskFirst, offset)
+	return result
