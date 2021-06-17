@@ -85,3 +85,13 @@ def getListOfFiles(basepath, include_basepath=True):
 
 def closeGame():
     os._exit(0)
+
+
+def sortImagesPath(img_list, base_path, extantion='.png'):
+    filePaths = []
+    for name in img_list:
+        filePaths.append(name.split('.')[0])
+    filePaths.sort(key=int)
+    for index in range(0, len(img_list)):
+        filePaths[index] = os.path.join(base_path, (filePaths[index]+extantion))
+    return filePaths
