@@ -50,3 +50,12 @@ def fadeout(surface, page, x, y):
         i -= 5
         i2 += 5
         pygame.display.update()
+
+def createBluredImg(input_img, output_img, ksize=(7, 7), sigmaX=0):
+    try:
+        image = cv2.imread(input_img)
+        Gaussian_blur = cv2.GaussianBlur(image, ksize, sigmaX)
+        cv2.imwrite(output_img, Gaussian_blur)
+    except:
+        return False
+    return True
