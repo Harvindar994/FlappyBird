@@ -22,3 +22,13 @@ def open_url(url):
             except:
                 return False
     return True
+
+def out_text_file(surface, text, size, x, y, color, font_file, return_img = False, bk_color=None):
+    try:
+        font = pygame.font.Font(font_file, size)
+    except OSError:
+        font = pygame.font.SysFont(None, size)
+    text_img = font.render(text, True, color, bk_color)
+    if return_img:
+        return text_img
+    surface.blit(text_img, [x, y])
