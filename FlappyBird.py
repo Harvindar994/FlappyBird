@@ -81,3 +81,7 @@ def getListOfFiles(basepath, include_basepath=True):
                 if os.path.isfile(path):
                     paths.append(entry.name)
     return paths
+
+
+def closeGame():
+    os._exit(0)
