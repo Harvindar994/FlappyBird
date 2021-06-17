@@ -64,3 +64,20 @@ def collision(maskFirst, maskSecond, maskFirstPos_x, maskFirstPos_y, maskSecondP
 	offset = (int(maskFirstPos_x - maskSecondPos_x), int(maskFirstPos_y - maskSecondPos_y))
 	result = maskSecond.overlap(maskFirst, offset)
 	return result
+
+
+def getListOfFiles(basepath, include_basepath=True):
+    paths = []
+    if include_basepath:
+        with os.scandir(basepath) as entries:
+            for entry in entries:
+                path = os.path.join(basepath, entry.name)
+                if os.path.isfile(path):
+                    paths.append(os.path.join(basepath, entry.name))
+    else:
+        with os.scandir(basepath) as entries:
+            for entry in entries:
+                path = os.path.join(basepath, entry.name)
+                if os.path.isfile(path):
+                    paths.append(entry.name)
+    return paths
