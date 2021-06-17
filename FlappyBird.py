@@ -95,3 +95,9 @@ def sortImagesPath(img_list, base_path, extantion='.png'):
     for index in range(0, len(img_list)):
         filePaths[index] = os.path.join(base_path, (filePaths[index]+extantion))
     return filePaths
+
+def custom_out_text(surface, text, x, x1, y, color, size, f_file):
+    text_img = out_text_file(surface, text, size, 0, 0, color, f_file, True)
+    put_point_x = x + ((x1 - x) // 2)
+    put_point_x = put_point_x - (text_img.get_width() // 2)
+    surface.blit(text_img, [put_point_x, y])
