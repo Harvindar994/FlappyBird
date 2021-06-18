@@ -147,3 +147,11 @@ class SoundManager:
         else:
             return "FNF"
             # File Not Found
+
+    def clear_music(self):
+        for key, sound in self.sounds.items():
+            try:
+                sound.stop()
+                self.sounds.pop(key)
+            except:
+                pass
