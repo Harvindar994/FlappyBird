@@ -117,3 +117,13 @@ class SoundManager:
 
     def __init__(self):
         pass
+
+    def load_sound(self, name, sound_file, default_volume=None):
+        if name in self.sounds:
+            sound = self.sounds[name]
+            sound.stop()
+            self.sounds.pop(name)
+
+        self.sounds[name] = pygame.mixer.Sound(sound_file)
+        if default_volume != None:
+            pygame.mixer.Sound.set_volume(self.sounds[name], default_volume)
