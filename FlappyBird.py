@@ -155,3 +155,20 @@ class SoundManager:
                 self.sounds.pop(key)
             except:
                 pass
+
+    def stop_sound(self, name='all'):
+        if name == 'all':
+            for key, sound in self.sounds.items():
+                try:
+                    sound.stop()
+                except:
+                    pass
+        elif name in self.sounds:
+            try:
+                sound.stop()
+            except:
+                return "U_to_S"
+            # unable to stop sound.
+        else:
+            return "FNF"
+        # File Not Found
