@@ -138,3 +138,12 @@ class SoundManager:
             else:
                 return "FNF"
                 # File Not Found
+
+    def set_volume(self, name, volume):
+        # Max Value 1.0
+        # Min Value 0.0
+        if name in self.sounds:
+            pygame.mixer.Sound.set_volume(self.sounds[name], volume)
+        else:
+            return "FNF"
+            # File Not Found
