@@ -176,3 +176,6 @@ class SoundManager:
 class SequentialAnimation:
     def __init__(self, screen, img_dir, x, y, screen_width, screen_height, auto_postion_at_center=False, create_mask=False):
         self.screen = screen
+
+        # fetching path of all images which is available in side of img_dir.
+        loader_images_path = getListOfFiles(img_dir, False)
