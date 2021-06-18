@@ -172,3 +172,7 @@ class SoundManager:
         else:
             return "FNF"
         # File Not Found
+
+class SequentialAnimation:
+    def __init__(self, screen, img_dir, x, y, screen_width, screen_height, auto_postion_at_center=False, create_mask=False):
+        self.screen = screen
