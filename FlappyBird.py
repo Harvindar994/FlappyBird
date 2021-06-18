@@ -127,3 +127,14 @@ class SoundManager:
         self.sounds[name] = pygame.mixer.Sound(sound_file)
         if default_volume != None:
             pygame.mixer.Sound.set_volume(self.sounds[name], default_volume)
+
+    def play_sound(self, name, loop=0, maxmim_time=None):
+        if self.settingData.game_sound:
+            if name in self.sounds:
+                if maxmim_time == None:
+                    pygame.mixer.Sound.play(self.sounds[name], loop)
+                else:
+                    pygame.mixer.Sound.play(self.sounds[name], loop, maxmim_time)
+            else:
+                return "FNF"
+                # File Not Found
