@@ -109,3 +109,11 @@ SOUND_HIT = 3
 SOUND_POINT = 4
 SOUND_WING = 5
 SOUND_BACKGROUND = 6
+
+
+class SoundManager:
+    sounds = {}  # this dict will store all sound file which is loaded in the game. and any object of this class can access.
+    settingData = None
+
+    def __init__(self):
+        pass
