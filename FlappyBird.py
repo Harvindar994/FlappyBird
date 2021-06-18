@@ -198,3 +198,11 @@ class SequentialAnimation:
         # get height and width of sequence image.
         self.image_width = self.loader_images[self.counter].get_width()
         self.image_height = self.loader_images[self.counter].get_height()
+
+        # creating system to fix location of animation in the center of the screen.
+        if auto_postion_at_center:
+            self.x = int((screen_width/2) - (self.image_width/2))
+            self.y = int((screen_height/2) - (self.image_height/2))-25
+        else:
+            self.x = x
+            self.y = y
