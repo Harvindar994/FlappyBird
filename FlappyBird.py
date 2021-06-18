@@ -191,3 +191,6 @@ class SequentialAnimation:
             self.masked_images = []
             for image in self.loader_images:
                 self.masked_images.append(pygame.mask.from_surface(image))
+
+        # creating variable for maintaining the index of loader_images list.
+        self.counter = 0
