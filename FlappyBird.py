@@ -194,3 +194,7 @@ class SequentialAnimation:
 
         # creating variable for maintaining the index of loader_images list.
         self.counter = 0
+
+        # get height and width of sequence image.
+        self.image_width = self.loader_images[self.counter].get_width()
+        self.image_height = self.loader_images[self.counter].get_height()
