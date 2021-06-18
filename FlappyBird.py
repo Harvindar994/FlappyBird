@@ -101,3 +101,11 @@ def custom_out_text(surface, text, x, x1, y, color, size, f_file):
     put_point_x = x + ((x1 - x) // 2)
     put_point_x = put_point_x - (text_img.get_width() // 2)
     surface.blit(text_img, [put_point_x, y])
+
+# Sound effacts names.
+SOUND_BUTTON_CLICK = 1
+SOUND_DIE = 2
+SOUND_HIT = 3
+SOUND_POINT = 4
+SOUND_WING = 5
+SOUND_BACKGROUND = 6
