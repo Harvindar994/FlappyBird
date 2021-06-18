@@ -179,3 +179,15 @@ class SequentialAnimation:
 
         # fetching path of all images which is available in side of img_dir.
         loader_images_path = getListOfFiles(img_dir, False)
+
+        # sorting paths in acceding order.
+        loader_images_path = sortImagesPath(loader_images_path, img_dir)
+
+        # loading all image.
+        self.loader_images = [pygame.image.load(image_path).convert_alpha() for image_path in loader_images_path]
+
+        # creating mask of all images which i loaded in "self.loader_images" but when create_mask will be true.
+        if create_mask:
+            self.masked_images = []
+            for image in self.loader_images:
+                self.masked_images.append(pygame.mask.from_surface(image))
