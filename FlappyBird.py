@@ -206,3 +206,6 @@ class SequentialAnimation:
         else:
             self.x = x
             self.y = y
+
+        # this variable will store total number of images.
+        self.total_images = len(self.loader_images)
