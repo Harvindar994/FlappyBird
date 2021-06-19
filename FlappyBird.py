@@ -244,3 +244,32 @@ class Loader(SequentialAnimation):
             pygame.display.update()
             clock.tick(60)
         self.counter = 0
+
+class Bird(SoundManager):
+    def __init__(self, screen, x, y, img_path, area):
+        self.birds = []
+        self.birds_mask = []
+        self.screen = screen
+        self.x = x
+        self.y = y
+        self.AREA_X, self.AREA_Y, self.AREA_WIDTH, self.AREA_HEIGHT = area
+        self.y_surface = self.AREA_Y+self.AREA_HEIGHT
+        birds = getListOfFiles(img_path, False)
+        birds = sortImagesPath(birds, img_path)
+        for bird in birds:
+            bird_image = pygame.image.load(bird).convert_alpha()
+            self.birds.append(bird_image)
+            """creating mask for check collision between objects.
+            i am creating different mask for different birds image because the picture of the bird changing every time."""
+            self.birds_mask.append(pygame.mask.from_surface(bird_image))
+
+        self.height = self.birds[0].get_height()
+        self.width = self.birds[0].get_width()
+        self.counter = 0
+        self.gravity = 1 # default is 1
+        self.declineSpeed = 0.1 # 0.1
+        self.propelSpeed = 10  # speed of moving forward and backward.
+        self.backMove = False
+        self.forwardMove = False
+        self.totalBirds = len(self.birds)
+        self.pushUpActive = False
