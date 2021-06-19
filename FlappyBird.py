@@ -308,3 +308,10 @@ class Bird(SoundManager):
         else:
             self.propelSpeed = self.propelSpeed if self.propelSpeed < 0 else self.propelSpeed*-1
             self.backMove = True
+
+    def forwardMove_StartStop(self):
+        if self.forwardMove:
+            self.forwardMove = False
+        else:
+            self.propelSpeed = self.propelSpeed if self.propelSpeed > 0 else self.propelSpeed*-1
+            self.forwardMove = True
