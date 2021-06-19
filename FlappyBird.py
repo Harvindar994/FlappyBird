@@ -212,3 +212,15 @@ class SequentialAnimation:
 
         # loader will active until active_state variable will hold True.
         self.active_state = False
+
+    def show(self):
+        self.screen.blit(self.loader_images[self.counter], (self.x, self.y))
+        self.counter += 1
+        if self.counter >= self.total_images:
+            self.counter = 0
+
+    def collide(self, other_mask, x, y):
+        if collision(self.masked_images[self.counter], other_mask, self.x, self.y, x, y):
+            return True
+        else:
+            return False
