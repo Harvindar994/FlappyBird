@@ -273,3 +273,23 @@ class Bird(SoundManager):
         self.forwardMove = False
         self.totalBirds = len(self.birds)
         self.pushUpActive = False
+
+        # creating variable for blink effact.
+        """
+        :param blink_start_time: this variable will store the time when blink effect start. so that 
+                    i will beb able to track total blink time.
+        :param bird_hide : this variable will decide when bird will hidden or not.
+                            if the value of the variable if true then bird will hide and when the value if False
+                            then bird will visible.
+        :param blink_gap: this variable will decide what time will be between 1st and 2nd blink.
+        :param blink: when the value of this variable will true then blink effect will run for decided time,
+                      the time will start when this variable get True value.
+        :param blink_time: this variable will decide how long the blink effect will run.
+        :param bird_hidden_start_time: this variable store the time when bird gets hide.
+        """
+        self.blink = False
+        self.blink_time = 5 # sec
+        self.blink_gap = 0.10 # sec
+        self.blink_start_time = None
+        self.bird_hide = False
+        self.bird_hidden_start_time = None
