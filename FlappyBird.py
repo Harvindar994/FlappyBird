@@ -293,3 +293,8 @@ class Bird(SoundManager):
         self.blink_start_time = None
         self.bird_hide = False
         self.bird_hidden_start_time = None
+
+    def blink_start(self):
+       if not self.blink:
+           self.blink = True
+           self.blink_start_time = time.time()
