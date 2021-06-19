@@ -301,3 +301,10 @@ class Bird(SoundManager):
 
     def setSurface(self, surface):
         self.y_surface = surface
+
+    def backMove_StopStart(self):
+        if self.backMove:
+            self.backMove = False
+        else:
+            self.propelSpeed = self.propelSpeed if self.propelSpeed < 0 else self.propelSpeed*-1
+            self.backMove = True
