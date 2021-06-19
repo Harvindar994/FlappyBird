@@ -298,3 +298,6 @@ class Bird(SoundManager):
        if not self.blink:
            self.blink = True
            self.blink_start_time = time.time()
+
+    def setSurface(self, surface):
+        self.y_surface = surface
