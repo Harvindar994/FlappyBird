@@ -224,3 +224,23 @@ class SequentialAnimation:
             return True
         else:
             return False
+
+class Loader(SequentialAnimation):
+    def __init__(self, screen, img_dir, x, y, screen_width, screen_height, auto_postion_at_center=False):
+        super(Loader, self).__init__(screen, img_dir, x, y, screen_width, screen_height, auto_postion_at_center)
+
+    def start(self):
+        sub = self.screen.subsurface((self.x, self.y, self.image_width, self.image_height))
+        image_file = os.path.join(DIR_TEMP_DATA, "temp_img.jpg")
+        pygame.image.save(sub, image_file)
+        self.background_cover = pygame.image.load(image_file)
+        while self.active_state:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    closeGame()
+
+            self.screen.blit(self.background_cover, (self.x, self.y))
+            self.show()
+            pygame.display.update()
+            clock.tick(60)
+        self.counter = 0
