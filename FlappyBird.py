@@ -209,3 +209,6 @@ class SequentialAnimation:
 
         # this variable will store total number of images.
         self.total_images = len(self.loader_images)
+
+        # loader will active until active_state variable will hold True.
+        self.active_state = False
