@@ -408,3 +408,8 @@ class PolePair_Manager(SoundManager):
         self.scroll_speed = scroll_speed
         self.poles.insert(0, {"pole_pair": PolePair(self.screen, self.POLE_IMGS, self.AREA_X+self.AREA_WIDTH+5, self.get_gap_position()),
                               "score_counted": False, "collided": False})
+
+        # creating variable to avoid continuous collision sound playing.
+        self.top_continue_collision_check = True
+        self.bottom_continue_collision_check = True
+        self.score = 0
