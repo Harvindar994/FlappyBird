@@ -377,3 +377,6 @@ class Bird(SoundManager):
         else:
             self.play_sound(SOUND_WING)
             self.pushUpActive = True
+
+class PolePair:
+    def __init__(self, screen, poles, x, gap_start_end):
