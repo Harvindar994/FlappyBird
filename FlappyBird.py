@@ -389,3 +389,7 @@ class PolePair:
         self.POLE_HEIGHT = self.TOP_POLE_IMG.get_height()
         self.top_pole_y = self.gapStartY - self.POLE_HEIGHT
         self.bottom_pole_y = self.gapStarty1
+
+    def show(self):
+        self.screen.blit(self.TOP_POLE_IMG, [self.x, self.top_pole_y])
+        self.screen.blit(self.BOTTOM_POLE_IMG, [self.x, self.bottom_pole_y])
