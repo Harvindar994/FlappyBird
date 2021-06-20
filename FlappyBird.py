@@ -337,3 +337,34 @@ class Bird(SoundManager):
                 self.blink = False
                 self.blink_start_time = None
                 self.bird_hidden_start_time = None
+
+        if not self.bird_hide:
+            self.screen.blit(self.birds[self.counter], (self.x, self.y))
+
+        if self.counter < self.totalBirds-1:
+            self.counter += 1
+        else:
+            self.counter = 0
+        if self.backMove or self.forwardMove:
+            if self.propelSpeed > 0:
+                if self.x+self.width < self.AREA_X+self.AREA_WIDTH:
+                    self.x += self.propelSpeed
+                else:
+                    self.x = self.AREA_X+self.AREA_WIDTH-self.width
+            if self.propelSpeed < 0:
+                if self.x > self.AREA_X:
+                    self.x += self.propelSpeed
+                else:
+                    self.x = self.AREA_X
+
+        if self.pushUpActive and self.y <= self.AREA_Y:
+            self.declineSpeed = 0
+            self.y = self.AREA_Y
+        else:
+            self.declineSpeed += self.gravity
+            if self.pushUpActive:
+                self.declineSpeed = -10
+            self.y += self.declineSpeed
+        if self.y <= self.AREA_Y:
+            self.y = self.AREA_Y
+            self.declineSpeed = 0
