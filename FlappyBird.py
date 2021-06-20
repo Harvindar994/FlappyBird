@@ -380,3 +380,12 @@ class Bird(SoundManager):
 
 class PolePair:
     def __init__(self, screen, poles, x, gap_start_end):
+        self.screen = screen
+        self.gapStartY, self.gapStarty1 = gap_start_end
+        self.gapHeight = self.gapStarty1 - self.gapStartY
+        self.TOP_POLE_IMG, self.BOTTOM_POLE_IMG = poles
+        self.x = x
+        self.POLE_WIDTH = self.TOP_POLE_IMG.get_width()
+        self.POLE_HEIGHT = self.TOP_POLE_IMG.get_height()
+        self.top_pole_y = self.gapStartY - self.POLE_HEIGHT
+        self.bottom_pole_y = self.gapStarty1
