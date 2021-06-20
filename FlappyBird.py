@@ -315,3 +315,25 @@ class Bird(SoundManager):
         else:
             self.propelSpeed = self.propelSpeed if self.propelSpeed > 0 else self.propelSpeed*-1
             self.forwardMove = True
+
+    def show(self):
+        # blink effect system start.
+        # this code will generate a blink effect.
+        if self.blink:
+            now_time = time.time()
+            if (now_time-self.blink_start_time) <= self.blink_time:
+                if self.bird_hidden_start_time is None:
+                    self.bird_hidden_start_time = time.time()
+                    self.bird_hide = True
+                now_time = time.time()
+                if self.bird_hide and (now_time-self.bird_hidden_start_time) >= self.blink_gap:
+                    self.bird_hidden_start_time = time.time()
+                    self.bird_hide = False
+                if not self.bird_hide and (now_time-self.bird_hidden_start_time) >= self.blink_gap:
+                    self.bird_hidden_start_time = time.time()
+                    self.bird_hide = True
+            else:
+                self.bird_hide = False
+                self.blink = False
+                self.blink_start_time = None
+                self.bird_hidden_start_time = None
