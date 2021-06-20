@@ -393,3 +393,5 @@ class PolePair:
     def show(self):
         self.screen.blit(self.TOP_POLE_IMG, [self.x, self.top_pole_y])
         self.screen.blit(self.BOTTOM_POLE_IMG, [self.x, self.bottom_pole_y])
+
+class PolePair_Manager(SoundManager):
