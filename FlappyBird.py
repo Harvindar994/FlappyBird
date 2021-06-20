@@ -416,3 +416,11 @@ class PolePair_Manager(SoundManager):
 
         # creating an variable to store how many pole_pair in poles list.
         self.lenth_poles_list = 1
+
+        # creating an object of score manager.
+        self.score_manager = Score()
+
+        # creating an object of life pils.
+        self.LifePil = LifePil(self.screen, "assets\\LifePils", 200, 0, (0, 0, window_x, window_y), 1.5)
+        self.LifePil.expired = True
+        self.LifePil_DropCounter = 0
