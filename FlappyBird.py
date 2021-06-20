@@ -368,3 +368,12 @@ class Bird(SoundManager):
         if self.y <= self.AREA_Y:
             self.y = self.AREA_Y
             self.declineSpeed = 0
+
+    def pushUp(self):
+        # if not self.gotHit:
+        #     self.declineSpeed = -10
+        if self.pushUpActive:
+            self.pushUpActive = False
+        else:
+            self.play_sound(SOUND_WING)
+            self.pushUpActive = True
