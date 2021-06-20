@@ -413,3 +413,6 @@ class PolePair_Manager(SoundManager):
         self.top_continue_collision_check = True
         self.bottom_continue_collision_check = True
         self.score = 0
+
+        # creating an variable to store how many pole_pair in poles list.
+        self.lenth_poles_list = 1
