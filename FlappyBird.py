@@ -395,3 +395,16 @@ class PolePair:
         self.screen.blit(self.BOTTOM_POLE_IMG, [self.x, self.bottom_pole_y])
 
 class PolePair_Manager(SoundManager):
+    def __init__(self, screen, bird, poles_img, scroll_speed, area, poles_distance, gap_height):
+        self.poles = []
+        self.bird = bird
+        self.screen = screen
+        self.POLE_IMGS = poles_img
+        self.TOP_POLE_MASK = pygame.mask.from_surface(self.POLE_IMGS[0])
+        self.BOTTOM_POLE_MASK = pygame.mask.from_surface(self.POLE_IMGS[1])
+        self.MIN_GAP_HEIGHT, self.MAX_GAP_HEIGHT = gap_height
+        self.pole_distance = poles_distance
+        self.AREA_X, self.AREA_Y, self.AREA_WIDTH, self.AREA_HEIGHT = area
+        self.scroll_speed = scroll_speed
+        self.poles.insert(0, {"pole_pair": PolePair(self.screen, self.POLE_IMGS, self.AREA_X+self.AREA_WIDTH+5, self.get_gap_position()),
+                              "score_counted": False, "collided": False})
