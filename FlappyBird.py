@@ -473,3 +473,7 @@ class PolePair_Manager(SoundManager):
                     self.score_manager.update_score(self.score)
                     self.play_sound(SOUND_POINT)
                     pole_pair_dict["score_counted"] = True
+
+    def check_collision(self, pole_pair_dict):
+        bird_mask = self.bird.birds_mask[self.bird.counter]
+        pole_pair = pole_pair_dict["pole_pair"]
