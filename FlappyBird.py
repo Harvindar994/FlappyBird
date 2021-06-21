@@ -457,3 +457,19 @@ class PolePair_Manager(SoundManager):
         gap_height = random.randint(self.MIN_GAP_HEIGHT, self.MAX_GAP_HEIGHT)
         y = random.randint(self.AREA_Y + 50, (self.AREA_Y + self.AREA_HEIGHT) - (gap_height + 50))
         return y, y+gap_height
+
+    def score_counter(self, pole_pair_dict):
+        if self.bird.blink:
+            if not pole_pair_dict["score_counted"]:
+                pole_pair = pole_pair_dict["pole_pair"]
+                if self.bird.x > pole_pair.x + pole_pair.POLE_WIDTH:
+                    pole_pair_dict["score_counted"] = True
+        else:
+            if not pole_pair_dict["score_counted"]:
+                pole_pair = pole_pair_dict["pole_pair"]
+                if self.bird.x > pole_pair.x+pole_pair.POLE_WIDTH:
+                    self.score += 1
+                    self.LifePil_DropCounter += 1
+                    self.score_manager.update_score(self.score)
+                    self.play_sound(SOUND_POINT)
+                    pole_pair_dict["score_counted"] = True
