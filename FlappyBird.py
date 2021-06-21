@@ -500,3 +500,14 @@ class PolePair_Manager(SoundManager):
 
 class ScrollingBackground:
     def __init__(self, screen, bird, ground, bottom_pole, top_pole, area):
+        """
+        :param ground: This is image of ground which will scroll continouslly at the bottom side.
+        :param screen: This variable will store the object of screen on which will will put every thing.
+        :param bottom_pole: Image of top pole ( piller )
+        :param top_pole: Image of bottom ( pole )
+        :param area: area in which this scroll background class will do every thing. actually this tuple like
+                     (x, y, width, height) -> for this game it will look like (0, 0, 1200, 637)
+        :param bird: the object of flying bird, i am storing the object of flying bird so that i could check
+                        collided with pole or note. alo i will pass this object in pole PolePair_Manager and
+                        PolePair_Manager manager will check bird collide with pole or not using this object.
+        """
