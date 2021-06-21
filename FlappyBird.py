@@ -524,3 +524,14 @@ class ScrollingBackground:
         self.TOP_POLE = pygame.image.load(top_pole).convert_alpha() # loading top pole image.
         self.scrollSpeed = 5    # deciding the speed of scroll we can -- and ++ while playing game but user can't.
         self.second_ground_x = self.ground_x+self.GROUND_WIDTH
+        """
+        About second_ground_x variable.
+        :param self.second_ground_x: i declared this variable because the lenth of ground image is equal to
+                                     screen width so that i have to use same ground image for two time
+                                     1st i will put ground image starting position of screen according to X coordinate
+                                     and 2nd copy of same image "Starting_point_of_screen + ground_width" 
+        """
+
+        self.PolePair_Manager = PolePair_Manager(self.SCREEN, self.bird, (self.TOP_POLE, self. BOTTOM_POLE), self.scrollSpeed,
+                                                 (self.WIN_X, self.WIN_Y, self.WIN_WIDTH, self.WIN_HEIGHT-self.GROUND_HEIGHT),
+                                                 180, (150, 180))
