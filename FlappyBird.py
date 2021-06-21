@@ -452,3 +452,8 @@ class PolePair_Manager(SoundManager):
             self.LifePil.set_pos_x(200, window_x-100)
             self.LifePil_DropCounter = 0
             self.LifePil.LifePilUsed = False
+
+    def get_gap_position(self):
+        gap_height = random.randint(self.MIN_GAP_HEIGHT, self.MAX_GAP_HEIGHT)
+        y = random.randint(self.AREA_Y + 50, (self.AREA_Y + self.AREA_HEIGHT) - (gap_height + 50))
+        return y, y+gap_height
