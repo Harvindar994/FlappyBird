@@ -424,3 +424,11 @@ class PolePair_Manager(SoundManager):
         self.LifePil = LifePil(self.screen, "assets\\LifePils", 200, 0, (0, 0, window_x, window_y), 1.5)
         self.LifePil.expired = True
         self.LifePil_DropCounter = 0
+
+    def manage(self):
+        for pole_pair_dict in self.poles:
+            pole_pair = pole_pair_dict["pole_pair"]
+            pole_pair.x -= self.scroll_speed
+            pole_pair.show()
+            self.check_collision(pole_pair_dict)
+            self.score_counter(pole_pair_dict)
