@@ -487,3 +487,13 @@ class PolePair_Manager(SoundManager):
                     pole_pair_dict['collided'] = True
                     if not self.bird.blink:
                         self.bird.blink_start()
+
+        # checking collision with bottom pole.
+        if collision(self.BOTTOM_POLE_MASK, bird_mask, pole_pair.x, pole_pair.bottom_pole_y, self.bird.x, self.bird.y):
+            if not self.bird.blink:
+                if not pole_pair_dict['collided']:
+                    self.life.set_value(self.life.value - 5)
+                    self.play_sound(SOUND_HIT)
+                    pole_pair_dict['collided'] = True
+                    if not self.bird.blink:
+                        self.bird.blink_start()
