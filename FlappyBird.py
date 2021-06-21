@@ -535,3 +535,7 @@ class ScrollingBackground:
         self.PolePair_Manager = PolePair_Manager(self.SCREEN, self.bird, (self.TOP_POLE, self. BOTTOM_POLE), self.scrollSpeed,
                                                  (self.WIN_X, self.WIN_Y, self.WIN_WIDTH, self.WIN_HEIGHT-self.GROUND_HEIGHT),
                                                  180, (150, 180))
+
+    def set_Bird(self, bird):
+        self.bird = bird
+        self.PolePair_Manager.bird = bird
