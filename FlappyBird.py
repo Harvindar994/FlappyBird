@@ -432,3 +432,23 @@ class PolePair_Manager(SoundManager):
             pole_pair.show()
             self.check_collision(pole_pair_dict)
             self.score_counter(pole_pair_dict)
+
+        pole_pair = self.poles[0]['pole_pair']
+        if pole_pair.x+pole_pair.POLE_WIDTH < self.AREA_X+self.AREA_WIDTH:
+            pole_pair = PolePair(self.screen, self.POLE_IMGS, pole_pair.x+pole_pair.POLE_WIDTH+self.pole_distance, self.get_gap_position())
+            self.poles.insert(0, {"pole_pair": pole_pair, "score_counted": False, "collided": False})
+            self.poles[0]["pole_pair"].show()
+            self.lenth_poles_list += 1
+
+        last_index = self.lenth_poles_list-1
+        if self.poles[last_index]["pole_pair"].x+self.poles[last_index]["pole_pair"].POLE_WIDTH < self.AREA_X:
+            self.poles.pop()
+            self.lenth_poles_list -= 1
+
+        self.LifePil.show(self.bird.birds_mask[self.bird.counter], self.bird.x, self.bird.y)
+
+        if self.LifePil_DropCounter >= 35:
+            self.LifePil.reset_animation()
+            self.LifePil.set_pos_x(200, window_x-100)
+            self.LifePil_DropCounter = 0
+            self.LifePil.LifePilUsed = False
