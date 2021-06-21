@@ -511,3 +511,16 @@ class ScrollingBackground:
                         collided with pole or note. alo i will pass this object in pole PolePair_Manager and
                         PolePair_Manager manager will check bird collide with pole or not using this object.
         """
+        self.bird = bird
+        self.SCREEN = screen
+        self.WIN_X, self.WIN_Y, self.WIN_WIDTH, self.WIN_HEIGHT = area # unpacking area tuple at here.
+        self.GROUND_IMG = pygame.image.load(ground).convert_alpha() # loading ground image.
+        self.ground_mask = pygame.mask.from_surface(self.GROUND_IMG)
+        self.GROUND_WIDTH = self.GROUND_IMG.get_width() # getting ground image width.
+        self.GROUND_HEIGHT = self.GROUND_IMG.get_height() # getting ground height.
+        self.GROUND_Y = self.WIN_Y + self.WIN_HEIGHT - self.GROUND_IMG.get_height() # fixing ground y position.
+        self.ground_x = self.WIN_X  # starting position of ground from where it will start to scroll to left side.
+        self.BOTTOM_POLE = pygame.image.load(bottom_pole).convert_alpha() # loading bottom pole image.
+        self.TOP_POLE = pygame.image.load(top_pole).convert_alpha() # loading top pole image.
+        self.scrollSpeed = 5    # deciding the speed of scroll we can -- and ++ while playing game but user can't.
+        self.second_ground_x = self.ground_x+self.GROUND_WIDTH
