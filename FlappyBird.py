@@ -497,3 +497,6 @@ class PolePair_Manager(SoundManager):
                     pole_pair_dict['collided'] = True
                     if not self.bird.blink:
                         self.bird.blink_start()
+
+class ScrollingBackground:
+    def __init__(self, screen, bird, ground, bottom_pole, top_pole, area):
