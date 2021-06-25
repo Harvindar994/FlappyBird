@@ -562,3 +562,16 @@ class ScrollingBackground:
             self.ground_x = self.second_ground_x + self.GROUND_WIDTH
         if self.second_ground_x + self.GROUND_WIDTH < self.WIN_X:
             self.second_ground_x = self.ground_x+self.GROUND_WIDTH
+
+        """
+        here checking the bird is collided with ground or not with the help of ground mask,
+        i am applying perfect collision system i order to check collision with ground.
+        """
+        bird_mask = self.bird.birds_mask[self.bird.counter]
+        if collision(bird_mask, self.ground_mask, self.bird.x, self.bird.y, self.ground_x, self.GROUND_Y) or \
+            collision(bird_mask, self.ground_mask, self.bird.x, self.bird.y, self.second_ground_x, self.GROUND_Y):
+            self.bird.blink_start()
+            """
+            Here system of countinious power loosing system.
+            """
+            self.PolePair_Manager.life.set_value(self.PolePair_Manager.life.value - 0.5)
