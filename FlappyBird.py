@@ -542,3 +542,5 @@ class ScrollingBackground:
 
     def getGround_Y(self):
         return self.GROUND_Y
+
+    def show(self):
