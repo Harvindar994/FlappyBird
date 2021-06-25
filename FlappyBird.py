@@ -615,3 +615,6 @@ IMG_GMENU_BACKGROUND_1_T2 = "assets\\GameMenu\\background\\Theme_2\\Menu_Backgro
 
 IMG_MENU = "assets\\GameMenu\\menu\\menu.png"
 IMG_LOGO = "assets\\GameMenu\\menu\\logo.png"
+
+# Loading a image of 1 pixel size to check mouse collision.
+PYIMG_MOUSE_COLLSISION_POINT_MASK = pygame.mask.from_surface(pygame.image.load("assets\\point\\point.png"))
