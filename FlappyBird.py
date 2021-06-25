@@ -609,3 +609,9 @@ IMG_DARK_BLACK_COVER = "assets\\background\\black_cover_2.png"
 IMG_GMENU_BACKGROUND_1_T1 = "assets\\GameMenu\\background\\Theme_1\\Menu_Background1.png"
 IMG_GMENU_BACKGROUND_2_T1 = "assets\\GameMenu\\background\\Theme_1\\Menu_Background2.png"
 IMG_GMENU_BACKGROUND_3_T1 = "assets\\GameMenu\\background\\Theme_1\\Menu_Background3.png"
+
+# Image of Game Menu - Theme 2
+IMG_GMENU_BACKGROUND_1_T2 = "assets\\GameMenu\\background\\Theme_2\\Menu_Background1.jpg"
+
+IMG_MENU = "assets\\GameMenu\\menu\\menu.png"
+IMG_LOGO = "assets\\GameMenu\\menu\\logo.png"
