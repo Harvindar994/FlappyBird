@@ -618,3 +618,9 @@ IMG_LOGO = "assets\\GameMenu\\menu\\logo.png"
 
 # Loading a image of 1 pixel size to check mouse collision.
 PYIMG_MOUSE_COLLSISION_POINT_MASK = pygame.mask.from_surface(pygame.image.load("assets\\point\\point.png"))
+
+PYIMG_BLACK_COVER = pygame.image.load("assets\\background\\black_cover.png").convert_alpha()
+PYIMG_MSG_BOX = pygame.image.load(IMG_MSG_BOX).convert_alpha()
+
+DIR_BIRD = "assets\\bird"
+clock = pygame.time.Clock()  # to control the speed of game.
