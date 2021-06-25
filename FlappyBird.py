@@ -604,3 +604,8 @@ ICON_CROSS_WHITE = "assets\\icon\\white_close.png"
 IMG_BOX_BOX_300x92 = "assets\\background\\black_box.png"
 IMG_MULTICOLOR_BOX_300x92 = "assets\\background\\multi_color_box.png"
 IMG_DARK_BLACK_COVER = "assets\\background\\black_cover_2.png"
+
+# Images of Game Menu - Theme 1
+IMG_GMENU_BACKGROUND_1_T1 = "assets\\GameMenu\\background\\Theme_1\\Menu_Background1.png"
+IMG_GMENU_BACKGROUND_2_T1 = "assets\\GameMenu\\background\\Theme_1\\Menu_Background2.png"
+IMG_GMENU_BACKGROUND_3_T1 = "assets\\GameMenu\\background\\Theme_1\\Menu_Background3.png"
