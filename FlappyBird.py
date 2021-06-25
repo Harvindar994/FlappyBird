@@ -624,3 +624,10 @@ PYIMG_MSG_BOX = pygame.image.load(IMG_MSG_BOX).convert_alpha()
 
 DIR_BIRD = "assets\\bird"
 clock = pygame.time.Clock()  # to control the speed of game.
+
+"""
+Here i am defining dir paths where i will store file and create temp files.
+"""
+DIR_TEMP_DATA = "data\\temp_files"
+FILE_SCORE = "data\\score.txt"
+FILE_SETTING = "data\\setting.txt"
