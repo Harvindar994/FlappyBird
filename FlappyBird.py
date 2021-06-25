@@ -544,3 +544,8 @@ class ScrollingBackground:
         return self.GROUND_Y
 
     def show(self):
+         """
+            This section controlling the poles of game which scroll's with ground of the game.
+        """
+
+        self.PolePair_Manager.manage()
