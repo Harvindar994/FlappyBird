@@ -588,3 +588,17 @@ window_y = 600
 environ['SDL_VIDEO_WINDOW_POS'] = str(int(infos.current_w / 2)-(window_x//2)) + ',' + str(int(infos.current_h / 2)-(window_y//2))
 pygame.display.set_caption("Flappy Bird")
 GameWindow = pygame.display.set_mode((window_x, window_y))
+
+"""
+Here I am defining all global variable and paths of all images which i will use in this game
+"""
+IMG_BACKGROUND = "assets\\background\\background_img.png"
+IMG_TOP_POLE = "assets\\background\\top_pole.png"
+IMG_BOTTOM_POLE = "assets\\background\\bottom_pole.png"
+IMG_GROUND = "assets\\background\\scroll_ground.png"
+IMG_SNOW_2 = "assets\\background\\snow_2.png"
+IMG_MSG_BOX = "assets\\msg_box\\msg_box.png"
+ICON_CROSS_WHITE = "assets\\icon\\white_close.png"
+IMG_BOX_BOX_300x92 = "assets\\background\\black_box.png"
+IMG_MULTICOLOR_BOX_300x92 = "assets\\background\\multi_color_box.png"
+IMG_DARK_BLACK_COVER = "assets\\background\\black_cover_2.png"
