@@ -549,3 +549,16 @@ class ScrollingBackground:
         """
 
         self.PolePair_Manager.manage()
+
+        """
+            This section of code controlling the ground of game which continous scroll while playing game at the
+            bottom side.
+        """
+        self.SCREEN.blit(self.GROUND_IMG, [self.ground_x, self.GROUND_Y])
+        self.SCREEN.blit(self.GROUND_IMG, [self.second_ground_x, self.GROUND_Y])
+        self.ground_x -= self.scrollSpeed
+        self.second_ground_x -= self.scrollSpeed
+        if self.ground_x+self.GROUND_WIDTH < self.WIN_X:
+            self.ground_x = self.second_ground_x + self.GROUND_WIDTH
+        if self.second_ground_x + self.GROUND_WIDTH < self.WIN_X:
+            self.second_ground_x = self.ground_x+self.GROUND_WIDTH
