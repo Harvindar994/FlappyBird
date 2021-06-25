@@ -539,3 +539,6 @@ class ScrollingBackground:
     def set_Bird(self, bird):
         self.bird = bird
         self.PolePair_Manager.bird = bird
+
+    def getGround_Y(self):
+        return self.GROUND_Y
