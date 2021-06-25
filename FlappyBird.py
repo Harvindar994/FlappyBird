@@ -575,3 +575,16 @@ class ScrollingBackground:
             Here system of countinious power loosing system.
             """
             self.PolePair_Manager.life.set_value(self.PolePair_Manager.life.value - 0.5)
+
+
+"""
+initialisation of game window.
+"""
+pygame.init()
+infos = pygame.display.Info()
+# global variable for window size window_x for width and window_y for height.
+window_x = 1200
+window_y = 600
+environ['SDL_VIDEO_WINDOW_POS'] = str(int(infos.current_w / 2)-(window_x//2)) + ',' + str(int(infos.current_h / 2)-(window_y//2))
+pygame.display.set_caption("Flappy Bird")
+GameWindow = pygame.display.set_mode((window_x, window_y))
