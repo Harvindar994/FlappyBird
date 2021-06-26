@@ -690,3 +690,9 @@ class Score:
             return False
         except:
             return False
+
+class Setting:
+    def __init__(self):
+        self.get()
+
+    
