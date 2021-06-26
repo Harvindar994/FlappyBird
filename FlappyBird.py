@@ -734,3 +734,6 @@ class RadioButton(SoundManager):
         self.radio_img = pygame.image.load(radio_img).convert_alpha()
         self.active_img = pygame.image.load(active_img).convert_alpha()
         self.hover_img = pygame.image.load(hover_img).convert_alpha()
+
+        # creating button mask in order to check collision of mouse with button.
+        self.button_mask = pygame.mask.from_surface(self.active_img)
