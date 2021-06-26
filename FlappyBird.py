@@ -752,3 +752,11 @@ class RadioButton(SoundManager):
 
         # creating variable to state button state.
         self.active_state = active_state
+
+        # creating group of radio buttons.
+        self.group = group
+        if group is not None:
+            if group in self.Groups:
+                self.Groups[group].append(self)
+            else:
+                self.Groups[group] = [self]
