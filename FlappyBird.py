@@ -749,3 +749,6 @@ class RadioButton(SoundManager):
         # deciding position of text.
         self.text_x = self.x + self.active_img.get_width() + 10
         self.text_y = int((self.y + (self.active_img.get_height()/2)) - (text_size/2))-2
+
+        # creating variable to state button state.
+        self.active_state = active_state
