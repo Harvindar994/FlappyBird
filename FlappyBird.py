@@ -760,3 +760,21 @@ class RadioButton(SoundManager):
                 self.Groups[group].append(self)
             else:
                 self.Groups[group] = [self]
+
+    def place_config(self, event):
+        if self.active_state:
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_DOWN:
+                    self.y += 1
+                    self.text_y += 1
+                if event.key == pygame.K_UP:
+                    self.y -= 1
+                    self.text_y -= 1
+                if event.key == pygame.K_LEFT:
+                    self.x -= 1
+                    self.text_x -= 1
+                if event.key == pygame.K_RIGHT:
+                    self.x += 1
+                    self.text_x += 1
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                print(f"Button :{self.row_text}, X :{self.x}, Y:{self.y}, Group:{self.group}")
