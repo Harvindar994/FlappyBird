@@ -677,3 +677,16 @@ class Score:
         except:
             self.score = 0
             return self.score
+
+    def update_score(self, score):
+        global ScoreFile
+        try:
+            if score > self.get_score():
+                file = open(ScoreFile, "wb")
+                self.score = score
+                pickle.dump(self, file)
+                file.close()
+                return True
+            return False
+        except:
+            return False
