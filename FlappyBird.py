@@ -695,4 +695,10 @@ class Setting:
     def __init__(self):
         self.get()
 
-    
+    def update(self):
+        try:
+            fp = open(FILE_SETTING, "wb")
+        except:
+            return 404
+        pickle.dump(self, fp)
+        fp.close()
