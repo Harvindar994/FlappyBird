@@ -642,3 +642,17 @@ Font_Quicksand_Bold = "assets\\font\\Quicksand-Bold.otf"
 # Game data file
 GameDataFile = "record.txt"
 ScoreFile = "data\\score.txt"
+
+# rbg color
+BLACK_COLOR = (0, 0, 0)
+WHITE_COLOR = (255, 255, 255)
+PURPLE_COLOR = (146, 44, 110)
+LIGHT_PURPLE = (208, 26, 144)
+LIGHT_BLUE_COLOR = (0, 133, 255)
+"""
+creating function to put text on screen.
+"""
+
+"""
+Info about author and game.
+"""
