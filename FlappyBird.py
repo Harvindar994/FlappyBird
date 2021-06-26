@@ -656,3 +656,7 @@ creating function to put text on screen.
 """
 Info about author and game.
 """
+
+AuthorName = "Harvindar Singh"
+BrandName = "Brightgoal"
+GameName = "Flappy Bird"
