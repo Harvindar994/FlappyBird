@@ -666,3 +666,14 @@ class Score:
     def __init__(self):
         self.score = 0
         self.get_score()
+
+    def get_score(self):
+        global ScoreFile
+        try:
+            file = open(ScoreFile, "rb");
+            data = pickle.load(file)
+            self.score = data.score
+            return self.score
+        except:
+            self.score = 0
+            return self.score
