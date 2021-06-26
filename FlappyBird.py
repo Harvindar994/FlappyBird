@@ -702,3 +702,22 @@ class Setting:
             return 404
         pickle.dump(self, fp)
         fp.close()
+
+    def get(self):
+        try:
+            fp = open(FILE_SETTING, "rb")
+            data = pickle.load(fp)
+            fp.close()
+        except:
+            self.background_music_volume = 50
+            self.sound_effact_volume = 50
+            self.theme = 1
+            self.game_sound = True
+            SoundManager.settingData = self
+            return
+
+        self.background_music_volume = data.background_music_volume
+        self.sound_effact_volume = data.sound_effact_volume
+        self.theme = data.theme
+        self.game_sound = data.game_sound
+        SoundManager.settingData = self
