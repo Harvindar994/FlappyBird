@@ -729,3 +729,8 @@ class RadioButton(SoundManager):
     def __init__(self, screen, text, text_size, radio_img, active_img, hover_img, x, y, group=None, active_state=False,
                  text_color=WHITE_COLOR, font_style=Font_Quicksand_Regular):
         self.screen = screen
+
+        # loading image
+        self.radio_img = pygame.image.load(radio_img).convert_alpha()
+        self.active_img = pygame.image.load(active_img).convert_alpha()
+        self.hover_img = pygame.image.load(hover_img).convert_alpha()
