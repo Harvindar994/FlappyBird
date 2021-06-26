@@ -721,3 +721,11 @@ class Setting:
         self.theme = data.theme
         self.game_sound = data.game_sound
         SoundManager.settingData = self
+
+
+class RadioButton(SoundManager):
+    Groups = {}
+
+    def __init__(self, screen, text, text_size, radio_img, active_img, hover_img, x, y, group=None, active_state=False,
+                 text_color=WHITE_COLOR, font_style=Font_Quicksand_Regular):
+        self.screen = screen
