@@ -638,3 +638,7 @@ Font_Quicksand_Regular = "assets\\font\\Quicksand-Regular.otf"
 Font_sofiapro_light = "assets\\font\\sofiapro-light.otf"
 Font_Kollektif = "assets\\font\\Kollektif.ttf"
 Font_Quicksand_Bold = "assets\\font\\Quicksand-Bold.otf"
+
+# Game data file
+GameDataFile = "record.txt"
+ScoreFile = "data\\score.txt"
