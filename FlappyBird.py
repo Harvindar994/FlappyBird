@@ -737,3 +737,7 @@ class RadioButton(SoundManager):
 
         # creating button mask in order to check collision of mouse with button.
         self.button_mask = pygame.mask.from_surface(self.active_img)
+
+        # position of radio button.
+        self.x = x
+        self.y = y
