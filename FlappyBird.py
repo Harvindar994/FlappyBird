@@ -741,3 +741,11 @@ class RadioButton(SoundManager):
         # position of radio button.
         self.x = x
         self.y = y
+
+        # creating text image.
+        self.row_text = text
+        self.text = out_text_file(screen, text, text_size, 0, 0, text_color, font_style, True)
+
+        # deciding position of text.
+        self.text_x = self.x + self.active_img.get_width() + 10
+        self.text_y = int((self.y + (self.active_img.get_height()/2)) - (text_size/2))-2
