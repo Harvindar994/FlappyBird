@@ -631,3 +631,10 @@ Here i am defining dir paths where i will store file and create temp files.
 DIR_TEMP_DATA = "data\\temp_files"
 FILE_SCORE = "data\\score.txt"
 FILE_SETTING = "data\\setting.txt"
+
+# Font files
+Font_DroidSansMono = "assets\\font\\DroidSansMono.ttf"
+Font_Quicksand_Regular = "assets\\font\\Quicksand-Regular.otf"
+Font_sofiapro_light = "assets\\font\\sofiapro-light.otf"
+Font_Kollektif = "assets\\font\\Kollektif.ttf"
+Font_Quicksand_Bold = "assets\\font\\Quicksand-Bold.otf"
