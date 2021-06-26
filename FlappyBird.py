@@ -660,3 +660,9 @@ Info about author and game.
 AuthorName = "Harvindar Singh"
 BrandName = "Brightgoal"
 GameName = "Flappy Bird"
+
+
+class Score:
+    def __init__(self):
+        self.score = 0
+        self.get_score()
