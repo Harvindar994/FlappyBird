@@ -816,3 +816,34 @@ class Button(SoundManager):
     def __init__(self, surface, image, hover_img, x, y, caption_text='', press_effact=False, button_text=None,
                  button_text_size=28, button_text_color=(255, 255, 255), text_file=Font_Kollektif,
                  list_menu=None, command=None, perfect_collision_check=True):
+
+        self.linked_list = list_menu
+        self.surface = surface
+        self.command = command
+        self.caption = caption_text
+        self.press_effact = press_effact
+        self.perfect_collision_check = perfect_collision_check
+        if type(image) != str:
+            self.image = image
+        else:
+            self.image = pygame.image.load(image).convert_alpha()
+            self.image_mask = pygame.mask.from_surface(self.image)
+            self.aspect_ration_x = self.image.get_width() / self.image.get_height()
+        if type(hover_img) != str:
+            self.hover_img = self.image
+        else:
+            self.hover_img = pygame.image.load(hover_img).convert_alpha()
+        self.button_text = button_text
+        self.button_text_size = button_text_size
+        self.x = x
+        self.y = y
+        self.x1 = x+self.image.get_width()
+        self.y1 = y+self.image.get_height()
+
+        if press_effact:
+            img = pygame.transform.scale(self.hover_img, ((self.hover_img.get_width()-4), (self.hover_img.get_height()-4))).convert_alpha()
+            self.hover_img = img
+        if button_text != None and type(button_text) == str:
+            self.button_text_img = out_text_file(surface, button_text, button_text_size, 0, 0, button_text_color, text_file, True)
+            self.button_text_x = (self.x+(self.image.get_width()/2))-(self.button_text_img.get_width()/2)
+            self.button_text_y = (self.y+(self.image.get_height()/2))-(self.button_text_img.get_height()/2)
