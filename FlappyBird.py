@@ -785,3 +785,18 @@ class RadioButton(SoundManager):
             return True
         else:
             return False
+
+    def place(self, event=None):
+        mouse_x, mouse_y = pygame.mouse.get_pos()
+        if self.group is not None and event is not None:
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if self.collide(mouse_x, mouse_y):
+                    self.play_sound(SOUND_BUTTON_CLICK)
+                    if not self.active_state:
+                        for button in self.Groups[self.group]:
+                            try:
+                                button.active_state = False
+                            except:
+                                pass
+                        self.active_state = True
+                        return True
