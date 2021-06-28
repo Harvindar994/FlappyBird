@@ -810,3 +810,9 @@ class RadioButton(SoundManager):
             else:
                 self.screen.blit(self.radio_img, (self.x, self.y))
         return False
+
+
+class Button(SoundManager):
+    def __init__(self, surface, image, hover_img, x, y, caption_text='', press_effact=False, button_text=None,
+                 button_text_size=28, button_text_color=(255, 255, 255), text_file=Font_Kollektif,
+                 list_menu=None, command=None, perfect_collision_check=True):
