@@ -800,3 +800,13 @@ class RadioButton(SoundManager):
                                 pass
                         self.active_state = True
                         return True
+
+        if event is None:
+            self.screen.blit(self.text, (self.text_x, self.text_y))
+            if self.collide(mouse_x, mouse_y) and not self.active_state:
+                self.screen.blit(self.hover_img, (self.x, self.y))
+            elif self.active_state:
+                self.screen.blit(self.active_img, (self.x, self.y))
+            else:
+                self.screen.blit(self.radio_img, (self.x, self.y))
+        return False
