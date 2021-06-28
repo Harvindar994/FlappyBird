@@ -778,3 +778,10 @@ class RadioButton(SoundManager):
                     self.text_x += 1
             if event.type == pygame.MOUSEBUTTONDOWN:
                 print(f"Button :{self.row_text}, X :{self.x}, Y:{self.y}, Group:{self.group}")
+
+    def collide(self, x, y):
+        global PYIMG_MOUSE_COLLSISION_POINT_MASK
+        if collision(PYIMG_MOUSE_COLLSISION_POINT_MASK, self.button_mask, x, y, self.x, self.y):
+            return True
+        else:
+            return False
