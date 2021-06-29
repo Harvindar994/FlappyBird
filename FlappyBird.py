@@ -972,3 +972,10 @@ class Scroll_Button:
         self.pointer_mouse_dis = 0
         self.font_size = self.thickness+15
         self.persentage_y = (self.y+(self.thickness/2))-(self.font_size/2+3)
+
+    def collide(self, x, y):
+        global PYIMG_MOUSE_COLLSISION_POINT_MASK
+        if collision(PYIMG_MOUSE_COLLSISION_POINT_MASK, self.pointer_img_mask, x, y, self.pointer_x, self.pointer_y):
+            return True
+        else:
+            return False
