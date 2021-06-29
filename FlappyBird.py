@@ -847,3 +847,33 @@ class Button(SoundManager):
             self.button_text_img = out_text_file(surface, button_text, button_text_size, 0, 0, button_text_color, text_file, True)
             self.button_text_x = (self.x+(self.image.get_width()/2))-(self.button_text_img.get_width()/2)
             self.button_text_y = (self.y+(self.image.get_height()/2))-(self.button_text_img.get_height()/2)
+
+    def config_Place(self, event=None):
+        mouse_x, mouse_y = pygame.mouse.get_pos()
+        self.surface.blit(self.image, (mouse_x, mouse_y))
+        try:
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                print("MOUSE POS : ", event.pos,
+                      ", Width : ", self.image.get_width(),
+                      ", Height : ", self.image.get_height(),
+                      ", Object_x : ", self.x,
+                      ", Object_y : ", self.y)
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_u:
+                    self.y -= 1
+                if event.key == pygame.K_d:
+                    self.y += 1
+                if event.key == pygame.K_l:
+                    self.x -= 1
+                if event.key == pygame.K_r:
+                    self.x += 1
+                if event.key == pygame.K_DOWN:
+                    img_height = self.image.get_height() - 5
+                    self.image = pygame.transform.scale(self.hover_img, (int(self.aspect_ration_x*img_height),
+                                                        img_height))
+                if event.key == pygame.K_UP:
+                    img_height = self.image.get_height() + 5
+                    self.image = pygame.transform.scale(self.hover_img, (int(self.aspect_ration_x * img_height),
+                                                        img_height))
+        except:
+            pass
