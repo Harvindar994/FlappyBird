@@ -935,3 +935,9 @@ class Button(SoundManager):
             self.surface.blit(self.image, [self.x, self.y])
         if self.button_text != None and type(self.button_text) == str:
             self.surface.blit(self.button_text_img, [self.button_text_x, self.button_text_y])
+
+
+class Scroll_Button:
+    def __init__(self,surface, x, x1, y, bar_thickness, pointer_img, pointer_hover_img = None, zero_value_pinter_img = None,
+                 zero_value_pointer_hover_img = None, defult_value = None, text_color=WHITE_COLOR, filled_bar_color=LIGHT_PURPLE,
+                 non_filled_bar_color=WHITE_COLOR):
