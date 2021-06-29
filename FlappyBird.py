@@ -897,3 +897,13 @@ class Button(SoundManager):
             return True
         else:
             return False
+
+    def config(self, config_dict):
+        if type(config_dict) != dict:
+            return
+        if 'position' in config_dict:
+            pos = config_dict['position']
+            if type(pos) == list and len(pos) == 2:
+                self.x, self.y = pos
+            else:
+                return
