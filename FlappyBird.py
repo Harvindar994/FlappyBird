@@ -941,3 +941,34 @@ class Scroll_Button:
     def __init__(self,surface, x, x1, y, bar_thickness, pointer_img, pointer_hover_img = None, zero_value_pinter_img = None,
                  zero_value_pointer_hover_img = None, defult_value = None, text_color=WHITE_COLOR, filled_bar_color=LIGHT_PURPLE,
                  non_filled_bar_color=WHITE_COLOR):
+
+        self.surface = surface
+        self.x = x
+        self.x1 = x1
+        self.y = y
+        self.text_color = text_color
+        self.filled_bar_color = filled_bar_color
+        self.non_filled_bar_color = non_filled_bar_color
+        self.thickness = bar_thickness
+        self.pointer_img = pointer_img
+        self.pointer_hover_img = pointer_hover_img if pointer_hover_img!=None else self.pointer_img
+        self.zero_value_pointer_img = zero_value_pinter_img if zero_value_pinter_img!=None else self.pointer_img
+        self.zero_value_pointer_hover_img = zero_value_pointer_hover_img if zero_value_pinter_img!=None and zero_value_pointer_hover_img!=None else self.zero_value_pointer_img if zero_value_pinter_img!=None else self.pointer_hover_img
+        self.pointer_img = pygame.image.load(self.pointer_img).convert_alpha()
+        self.pointer_img_mask = pygame.mask.from_surface(self.pointer_img)
+        self.pointer_hover_img = pygame.image.load(self.pointer_hover_img).convert_alpha()
+        self.zero_value_pointer_img = pygame.image.load(self.zero_value_pointer_img).convert_alpha()
+        self.zero_value_pointer_hover_img = pygame.image.load(self.zero_value_pointer_hover_img).convert_alpha()
+        self.value = float(0)
+        self.pointer_width = self.pointer_img.get_width()
+        self.pointer_height = self.pointer_img.get_height()
+        self.step_value = 100/(((self.x1-self.x)+2)-self.pointer_width)
+        self.pointer_x = self.x-1
+        if defult_value != None:
+            self.pointer_x = self.pointer_x+int(defult_value/self.step_value)
+            self.value = defult_value
+        self.pointer_y = (self.y + int(self.thickness/2))-int(self.pointer_height/2)
+        self.move_pointer = False
+        self.pointer_mouse_dis = 0
+        self.font_size = self.thickness+15
+        self.persentage_y = (self.y+(self.thickness/2))-(self.font_size/2+3)
