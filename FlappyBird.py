@@ -985,3 +985,25 @@ class Scroll_Button:
         self.value = persentage
 
     def place(self, events=None):
+        mouse_x, mouse_y = pygame.mouse.get_pos()
+        if events != None:
+            if events.type == pygame.MOUSEBUTTONDOWN:
+                if events.button == 1:
+                    mouse_x, mouse_y = events.pos
+                    if self.collide(mouse_x, mouse_y):
+                        self.pointer_mouse_dis = mouse_x - self.pointer_x
+                        self.move_pointer = True
+            if events.type == pygame.MOUSEBUTTONUP:
+                if events.button == 1:
+                    self.move_pointer = False
+        if self.move_pointer:
+            if mouse_x-self.pointer_mouse_dis >= self.x and mouse_x-self.pointer_mouse_dis <= self.x1-self.pointer_width:
+                self.pointer_x = mouse_x-self.pointer_mouse_dis
+            if mouse_x-self.pointer_mouse_dis < self.x:
+                self.pointer_x = self.x-1
+            if mouse_x-self.pointer_mouse_dis > self.x1-self.pointer_width:
+                self.pointer_x = self.x1-self.pointer_width+1
+            self.value = (self.pointer_x - (self.x-1))*self.step_value
+            if events == None:
+                custom_out_text(self.surface, str(int(self.value)) + '%', self.x1 + 15, self.x1 + 45, self.persentage_y,
+                                self.text_color, self.font_size, Font_Kollektif)
