@@ -1007,3 +1007,19 @@ class Scroll_Button:
             if events == None:
                 custom_out_text(self.surface, str(int(self.value)) + '%', self.x1 + 15, self.x1 + 45, self.persentage_y,
                                 self.text_color, self.font_size, Font_Kollektif)
+
+        if events == None:
+            pygame.draw.rect(self.surface, self.non_filled_bar_color,
+                             [self.x, self.y, self.x1 - self.x, self.thickness])
+            pygame.draw.rect(self.surface, self.filled_bar_color, [self.x, self.y, self.pointer_x-self.x+2, self.thickness])
+
+            if self.value <= 0:
+                if self.move_pointer or self.collide(mouse_x, mouse_y):
+                    self.surface.blit(self.zero_value_pointer_hover_img, [self.pointer_x, self.pointer_y])
+                else:
+                    self.surface.blit(self.zero_value_pointer_img, [self.pointer_x, self.pointer_y])
+            else:
+                if self.move_pointer or self.collide(mouse_x, mouse_y):
+                    self.surface.blit(self.pointer_hover_img, [self.pointer_x, self.pointer_y])
+                else:
+                    self.surface.blit(self.pointer_img, [self.pointer_x, self.pointer_y])
