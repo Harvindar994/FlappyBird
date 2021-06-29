@@ -907,3 +907,31 @@ class Button(SoundManager):
                 self.x, self.y = pos
             else:
                 return
+
+    def place(self, events=None):
+        global Mouse_x
+        global Mouse_y
+        global event
+        Mouse_x, Mouse_y = pygame.mouse.get_pos()
+        #     if events != None:
+        # if type(self.linked_list) == List_menu:
+        #         for event in events:
+        #             if event.type == pygame.MOUSEBUTTONDOWN:
+        #                 if event.button == 1:
+        #                     mouse_x, mouse_y = event.pos
+        #                     if self.collide(mouse_x, mouse_y):
+        #                         if self.linked_list.list_state:
+        #                             self.linked_list.list_state = False
+        #                         else:
+        #                             self.linked_list.list_state = True
+        if self.collide(Mouse_x, Mouse_y):
+            if self.press_effact:
+                self.surface.blit(self.hover_img, [self.x+2, self.y+2])
+            else:
+                self.surface.blit(self.hover_img, [self.x, self.y])
+            if len(self.caption) != 0:
+                caption(self.caption, self.x1+2, self.y-16)
+        else:
+            self.surface.blit(self.image, [self.x, self.y])
+        if self.button_text != None and type(self.button_text) == str:
+            self.surface.blit(self.button_text_img, [self.button_text_x, self.button_text_y])
