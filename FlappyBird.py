@@ -979,3 +979,7 @@ class Scroll_Button:
             return True
         else:
             return False
+
+    def config_value(self, persentage):
+        self.pointer_x = (self.x-1) + (int(persentage / self.step_value))
+        self.value = persentage
