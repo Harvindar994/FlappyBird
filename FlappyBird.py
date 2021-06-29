@@ -877,3 +877,15 @@ class Button(SoundManager):
                                                         img_height))
         except:
             pass
+
+    def collide(self, x, y, clicked=False):
+        global PYIMG_MOUSE_COLLSISION_POINT_MASK
+        if self.perfect_collision_check:
+            if collision(PYIMG_MOUSE_COLLSISION_POINT_MASK, self.image_mask, x, y, self.x, self.y):
+                if clicked:
+                    self.play_sound(SOUND_BUTTON_CLICK)
+                return True
+            else:
+                return False
+        else:
+            return self.rect_collision_check(x, y, clicked)
