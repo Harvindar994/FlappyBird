@@ -889,3 +889,11 @@ class Button(SoundManager):
                 return False
         else:
             return self.rect_collision_check(x, y, clicked)
+
+    def rect_collision_check(self, x, y, clicked=False):
+        if (x > self.x) and (x < self.x1) and (y > self.y) and (y < self.y1):
+            if clicked:
+                self.play_sound(SOUND_BUTTON_CLICK)
+            return True
+        else:
+            return False
