@@ -1023,3 +1023,5 @@ class Scroll_Button:
                     self.surface.blit(self.pointer_hover_img, [self.pointer_x, self.pointer_y])
                 else:
                     self.surface.blit(self.pointer_img, [self.pointer_x, self.pointer_y])
+
+class LifePil:
