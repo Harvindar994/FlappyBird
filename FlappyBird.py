@@ -1050,3 +1050,7 @@ class LifePil:
 
     def set_pos_x(self, point_1, point_2):
         self.animation.x = random.randint(point_1, point_2)
+
+    def reset_animation(self):
+        self.expired = False
+        self.animation.y = 0
