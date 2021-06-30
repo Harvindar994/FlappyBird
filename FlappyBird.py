@@ -1025,3 +1025,12 @@ class Scroll_Button:
                     self.surface.blit(self.pointer_img, [self.pointer_x, self.pointer_y])
 
 class LifePil:
+    def __init__(self, surface, sequence_images_dir, x, y, area, drop_speed=15):
+        self.index = 0
+        self.screen = surface
+        self.WIN_X, self.WIN_Y, self.WIN_WIDTH, self.WIN_HEIGHT = area
+        self.drop_speed = drop_speed
+        self.animation = SequentialAnimation(surface, sequence_images_dir, x, y, self.WIN_X+self.WIN_WIDTH,
+                                             self.WIN_Y+self.WIN_HEIGHT, create_mask=True)
+        self.expired = False
+        self.LifePilUsed = False
