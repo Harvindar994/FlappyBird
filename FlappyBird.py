@@ -1041,3 +1041,9 @@ class LifePil:
         else:
             if self.animation.collide(object_mask, x, y):
                 self.LifePilUsed = True
+                return False
+            self.animation.show()
+            if self.animation.y < self.WIN_Y+self.WIN_HEIGHT:
+                self.animation.y += self.drop_speed
+            elif not self.expired:
+                self.expired = True
