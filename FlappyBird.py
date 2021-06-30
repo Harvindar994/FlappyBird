@@ -1038,3 +1038,6 @@ class LifePil:
     def show(self, object_mask, x, y):
         if self.expired:
             return False
+        else:
+            if self.animation.collide(object_mask, x, y):
+                self.LifePilUsed = True
