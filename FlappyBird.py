@@ -1036,3 +1036,5 @@ class LifePil:
         self.LifePilUsed = False
 
     def show(self, object_mask, x, y):
+        if self.expired:
+            return False
