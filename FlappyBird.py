@@ -1034,3 +1034,5 @@ class LifePil:
                                              self.WIN_Y+self.WIN_HEIGHT, create_mask=True)
         self.expired = False
         self.LifePilUsed = False
+
+    def show(self, object_mask, x, y):
