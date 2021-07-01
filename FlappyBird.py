@@ -1147,3 +1147,22 @@ class Message:
             return True
         else:
             return False
+
+    def place(self):
+        if self.text_align == 'left' or self.text_align == 'right':
+            x, y, x1, y1 = self.message_area
+            start_point_y = y+2
+        else:
+            start_point_y = self.message_starting_y_point
+        if self.message_status:
+            for e in self.message_list_img:
+                if self.text_align == 'center':
+                    x = self.center_x - (e.get_width()/2)
+                elif self.text_align == 'left':
+                    x, y, x1, y1 = self.message_area
+                    x += 2
+                elif self.text_align == 'right':
+                    x, y, x1, y1 = self.message_area
+                    x = x1 - (e.get_width()+2)
+                self.surface.blit(e, [x, start_point_y])
+                start_point_y += self.text_size+3
