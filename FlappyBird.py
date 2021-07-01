@@ -1100,3 +1100,16 @@ class Message:
                 if self.text_size < 8:
                     return
                 continue
+            # for e in message_list:
+            #     img = out_text_file(surface, e, self.text_size, 0, 0, self.color, font_file, True)
+            #     if img.get_width() > max_width_line:
+            #         max_width_line = img.get_width()
+            #     self.message_list_img.append(img)
+            # if max_width_line > rect_width:
+            #     max_width_line = 0
+            #     self.text_size -= 1
+            #     text_size -= 1
+            #     self.message_list_img  = []
+            #     if self.text_size < 8:
+            #         return
+            #     continue
