@@ -1173,3 +1173,4 @@ Creating msg box to show msg on screen
 def msg_box(msg):
     global PYIMG_BLACK_COVER, GameWindow, IMG_MSG_BOX
     background_img = os.path.join(DIR_TEMP_DATA, "temp_bkImage.png")
+    pygame.image.save(GameWindow, background_img)
