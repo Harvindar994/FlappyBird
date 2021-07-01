@@ -1078,3 +1078,7 @@ class Message:
         rect_width = x1 - x
         rect_height = y1-y
         max_width_line = 0
+
+        # define flags
+        text_size_adjustment_flag = False
+        while True:
