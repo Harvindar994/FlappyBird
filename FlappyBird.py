@@ -1056,3 +1056,25 @@ class LifePil:
         self.animation.y = 0
 
 class Message:
+    def __init__(self, surface, rect, message='', text_size = 17, text_color = (255, 255, 255), text_align = 'center', font_file = Font_sofiapro_light):
+        global GameWindow
+        self.message = message
+        self.message_area = rect
+        self.text_size = text_size
+        self.color = text_color
+        self.text_align = text_align
+        self.message_status = False
+        self.surface = surface
+        self.message_list_img = []
+        self.message_starting_y_point = 0
+        if type(rect) == list or type(rect) == tuple:
+            x, y, x1, y1 = rect
+        else:
+            return
+        if len(message) == 0:
+            return
+        self.center_x = int(((x1 - x)/2) + x)
+        message_list = message.split(',')
+        rect_width = x1 - x
+        rect_height = y1-y
+        max_width_line = 0
