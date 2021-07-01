@@ -1113,3 +1113,28 @@ class Message:
             #     if self.text_size < 8:
             #         return
             #     continue
+            total_height = self.message_list_img[0].get_height()+1
+            total_height = total_height*len(self.message_list_img)
+            if total_height > rect_height:
+                text_size -= 1
+                self.text_size -= 1
+                self.message_list_img = []
+                if self.text_size < 8:
+                    return
+                continue
+            else:
+                break
+        message_list_lenth = len(self.message_list_img)
+        center_y = y + ((y1 - y)/2)
+        if message_list_lenth % 2 == 0:
+            starting_pos = (center_y - 2)
+            half_msg = int((message_list_lenth) / 2)
+        else:
+            starting_pos = center_y - int(self.message_list_img[0].get_height()/2)
+            half_msg = int((message_list_lenth-1)/2)
+        line_height = self.message_list_img[0].get_height()
+        while half_msg != 0:
+            starting_pos -= line_height
+            half_msg -= 1
+        self.message_status = True
+        self.message_starting_y_point = starting_pos
