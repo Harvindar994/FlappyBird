@@ -1082,3 +1082,10 @@ class Message:
         # define flags
         text_size_adjustment_flag = False
         while True:
+            for e in message_list:
+                img = out_text_file(surface, e, self.text_size, 0, 0, self.color, font_file, True)
+                img = img.convert_alpha()
+                if img.get_width() > rect_width:
+                    text_size_adjustment_flag = True
+                    break
+                self.message_list_img.append(img)
