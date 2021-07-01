@@ -1138,3 +1138,12 @@ class Message:
             half_msg -= 1
         self.message_status = True
         self.message_starting_y_point = starting_pos
+
+    def config(self, surface=None, rect=None, message=None, text_size = None, text_color = None):
+        if surface != None or rect != None or message != None or text_size != None or text_color != None:
+            self.__init__(surface if surface!= None else self.surface, rect if rect!=None else self.message_area,
+                          message if message!=None else self.message, text_size if text_size!=None else self.text_size,
+                          text_color if text_color!=None else self.color)
+            return True
+        else:
+            return False
