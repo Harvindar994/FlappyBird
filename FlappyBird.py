@@ -1171,3 +1171,4 @@ class Message:
 Creating msg box to show msg on screen
 """
 def msg_box(msg):
+    global PYIMG_BLACK_COVER, GameWindow, IMG_MSG_BOX
