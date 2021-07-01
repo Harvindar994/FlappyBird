@@ -1166,3 +1166,8 @@ class Message:
                     x = x1 - (e.get_width()+2)
                 self.surface.blit(e, [x, start_point_y])
                 start_point_y += self.text_size+3
+
+"""
+Creating msg box to show msg on screen
+"""
+def msg_box(msg):
