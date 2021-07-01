@@ -1054,3 +1054,5 @@ class LifePil:
     def reset_animation(self):
         self.expired = False
         self.animation.y = 0
+
+class Message:
