@@ -1089,3 +1089,14 @@ class Message:
                     text_size_adjustment_flag = True
                     break
                 self.message_list_img.append(img)
+            else:
+                text_size_adjustment_flag = False
+            if text_size_adjustment_flag:
+                text_size_adjustment_flag = False
+                max_width_line = 0
+                self.text_size -= 1
+                text_size -= 1
+                self.message_list_img  = []
+                if self.text_size < 8:
+                    return
+                continue
