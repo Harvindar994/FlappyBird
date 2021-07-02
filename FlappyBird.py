@@ -1247,3 +1247,17 @@ def caption(text, x, y, window_width = window_x, window_height = window_y, bk_co
     difrence_between_m_y = 16
     difrence_between_m_x = 7
     text_img = out_text_file(GameWindow, text, 12, 0, 0, BLACK_COLOR, Font_DroidSansMono, True)
+
+    text_img = text_img.convert_alpha()
+    rect_width = text_img.get_width()+6
+    rect_height = text_img.get_height()+4
+    rect_x = x+difrence_between_m_x
+    rect_y = y+difrence_between_m_y
+    if (rect_y+rect_height > window_height) and (rect_x+rect_width > window_width):
+        rect_x = x-rect_width
+        rect_y = y-rect_height
+    if rect_x+rect_width > window_width:
+        rect_x = rect_x-rect_width
+    if rect_y+rect_height > window_height:
+        rect_x = x
+        rect_y = y-rect_height
