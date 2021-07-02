@@ -1261,3 +1261,8 @@ def caption(text, x, y, window_width = window_x, window_height = window_y, bk_co
     if rect_y+rect_height > window_height:
         rect_x = x
         rect_y = y-rect_height
+
+    pygame.draw.rect(GameWindow, bk_color,[rect_x, rect_y, rect_width, rect_height])
+    pygame.draw.rect(GameWindow, border_color, [rect_x, rect_y, rect_width, rect_height], 1)
+    GameWindow.blit(text_img, [rect_x+3, rect_y+2]) #10, 5
+    
