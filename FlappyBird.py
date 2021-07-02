@@ -1239,3 +1239,9 @@ def msg_box(msg):
             message.place()
             closeButton.place()
         pygame.display.update()
+
+"""
+Created this function for caption
+"""
+def caption(text, x, y, window_width = window_x, window_height = window_y, bk_color = (255, 255, 255), border_color = (43, 43, 43)):
+    
