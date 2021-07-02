@@ -1204,3 +1204,30 @@ def msg_box(msg):
 
     #  creating close button.
     closeButton = Button(GameWindow, ICON_CROSS_ORANGE, ICON_CROSS_WHITE, 774, 220, "close")
+
+    while not close_msg_box:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                closeGame()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_x, mouse_y = event.pos
+                if closeButton.collide(mouse_x, mouse_y):
+                    close_msg = True
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_ESCAPE:
+                    close_msg = True
+
+        if x > original_x and not close_msg:
+            temp_width += step_value_x
+            x -= step_x
+            temp_height += step_value_y
+            y -= step_y
+            temp_img = pygame.transform.scale(msg_box_img, (temp_width, temp_height)).convert_alpha()
+        elif close_msg and temp_width > 0:
+            temp_width -= step_value_x
+            x += step_x
+            temp_height -= step_value_y
+            y += step_y
+            temp_img = pygame.transform.scale(msg_box_img, (temp_width, temp_height)).convert_alpha()
+        elif close_msg and temp_width <= 0:
+            close_msg_box = True
