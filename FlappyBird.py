@@ -1179,3 +1179,22 @@ def msg_box(msg):
     msg_box_img = PYIMG_MSG_BOX
     close_msg_box = False
     close_msg = False
+
+    """
+        Defining Variable For Msg Box Image Processing.
+    """
+    height = msg_box_img.get_height()
+    width = msg_box_img.get_width()
+
+    original_x = (window_x//2) - (width//2)  # Adjustment width 45px, and height 33px
+    original_y = (window_y//2) - (height//2)
+    y = window_y//2
+    x = window_x//2
+
+    temp_height = 0
+    temp_width = 0
+    step_value_y = 60
+    step_value_x = int(step_value_y*(width/height))
+    step_x = step_value_x//2
+    step_y = step_value_y//2
+    temp_img = msg_box_img
