@@ -1231,3 +1231,11 @@ def msg_box(msg):
             temp_img = pygame.transform.scale(msg_box_img, (temp_width, temp_height)).convert_alpha()
         elif close_msg and temp_width <= 0:
             close_msg_box = True
+
+        GameWindow.blit(background_img, [0, 0])
+        GameWindow.blit(PYIMG_BLACK_COVER, [0, 0])
+        GameWindow.blit(temp_img, [x, y])
+        if not close_msg and x <= original_x:
+            message.place()
+            closeButton.place()
+        pygame.display.update()
