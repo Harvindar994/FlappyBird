@@ -1201,3 +1201,6 @@ def msg_box(msg):
 
     # creating an image of text msg which i will blit in msg box.
     message = Message(GameWindow, (428, 213, 797, 381), msg)
+
+    #  creating close button.
+    closeButton = Button(GameWindow, ICON_CROSS_ORANGE, ICON_CROSS_WHITE, 774, 220, "close")
