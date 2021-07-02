@@ -1175,3 +1175,7 @@ def msg_box(msg):
     background_img = os.path.join(DIR_TEMP_DATA, "temp_bkImage.png")
     pygame.image.save(GameWindow, background_img)
     createBluredImg(background_img, background_img, (19, 19), 5)
+    background_img = pygame.image.load(background_img).convert_alpha()
+    msg_box_img = PYIMG_MSG_BOX
+    close_msg_box = False
+    close_msg = False
