@@ -1198,3 +1198,6 @@ def msg_box(msg):
     step_x = step_value_x//2
     step_y = step_value_y//2
     temp_img = msg_box_img
+
+    # creating an image of text msg which i will blit in msg box.
+    message = Message(GameWindow, (428, 213, 797, 381), msg)
