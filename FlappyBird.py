@@ -1244,4 +1244,6 @@ def msg_box(msg):
 Created this function for caption
 """
 def caption(text, x, y, window_width = window_x, window_height = window_y, bk_color = (255, 255, 255), border_color = (43, 43, 43)):
-    
+    difrence_between_m_y = 16
+    difrence_between_m_x = 7
+    text_img = out_text_file(GameWindow, text, 12, 0, 0, BLACK_COLOR, Font_DroidSansMono, True)
