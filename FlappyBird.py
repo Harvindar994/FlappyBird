@@ -1297,3 +1297,8 @@ class Snow:
             self.x += self.direction
         else:
             self.x, self.y = self.default_position
+
+"""
+snow fall class will manage the object's of Snow class.
+"""
+class SnowFall:
