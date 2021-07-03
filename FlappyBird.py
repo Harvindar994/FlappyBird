@@ -1274,3 +1274,5 @@ Here I created a class of snow that will be falling down in background while pla
 class Snow:
     snow_imgs = [pygame.image.load(IMG_SNOW_1).convert_alpha(),
                  pygame.image.load(IMG_SNOW_2).convert_alpha()]
+
+    def __init__(self, window, snow_x, snow_y, area, decline_speed=0.1):
