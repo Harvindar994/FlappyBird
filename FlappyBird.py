@@ -1287,3 +1287,13 @@ class Snow:
         self.snow_width = self.img.get_width()
         self.snow_height = self.img.get_height()
         self.area_x, self.area_y, self.area_width, self.area_height = area
+
+    def show(self):
+        direction = [1, 1, 1, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1, -1]
+        if self.x+self.snow_width >= self.area_x and self.x <= self.area_x+self.area_width and self.y <= self.area_y+self.area_height:
+            self.window.blit(self.img, [self.x, self.y])
+            self.y += self.decline_speed
+            self.direction *= direction[random.randint(0, 13)]
+            self.x += self.direction
+        else:
+            self.x, self.y = self.default_position
