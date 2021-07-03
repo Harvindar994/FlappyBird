@@ -1313,3 +1313,6 @@ class SnowFall:
     def show(self):
         for snow in self.snows:
                 snow.show()
+
+
+class ProgressBar:
