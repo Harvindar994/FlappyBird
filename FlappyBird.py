@@ -1309,3 +1309,7 @@ class SnowFall:
         for e in range(100):
             self.snows.append(Snow(window, random.randint(self.x+10, (self.x+self.width)- 10),
                                    random.randint(self.y-200, self.y), area, self.decline_speeds[random.randint(5, 8)]))
+
+    def show(self):
+        for snow in self.snows:
+                snow.show()
