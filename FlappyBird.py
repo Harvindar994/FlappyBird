@@ -1316,3 +1316,5 @@ class SnowFall:
 
 
 class ProgressBar:
+    def __init__(self, screen, progress_rect, progress_rect_color, background_rect=None, background_rect_color=None,
+                 text_color=(255, 255, 255), show_percentage=False, text_size=14, default_value=100, font_style=Font_sofiapro_light):
