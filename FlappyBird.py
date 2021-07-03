@@ -1302,3 +1302,10 @@ class Snow:
 snow fall class will manage the object's of Snow class.
 """
 class SnowFall:
+    def __init__(self, window, area, snow_count = 200):
+        self.x, self.y, self.width, self.height = area
+        self.decline_speeds = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+        self.snows = []
+        for e in range(100):
+            self.snows.append(Snow(window, random.randint(self.x+10, (self.x+self.width)- 10),
+                                   random.randint(self.y-200, self.y), area, self.decline_speeds[random.randint(5, 8)]))
