@@ -1265,4 +1265,10 @@ def caption(text, x, y, window_width = window_x, window_height = window_y, bk_co
     pygame.draw.rect(GameWindow, bk_color,[rect_x, rect_y, rect_width, rect_height])
     pygame.draw.rect(GameWindow, border_color, [rect_x, rect_y, rect_width, rect_height], 1)
     GameWindow.blit(text_img, [rect_x+3, rect_y+2]) #10, 5
-    
+
+
+"""
+Here I created a class of snow that will be falling down in background while playing the game.
+"""
+
+class Snow:
