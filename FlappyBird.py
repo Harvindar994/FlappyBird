@@ -1276,3 +1276,14 @@ class Snow:
                  pygame.image.load(IMG_SNOW_2).convert_alpha()]
 
     def __init__(self, window, snow_x, snow_y, area, decline_speed=0.1):
+        # loading images in class variables.
+        self.default_position = (snow_x, snow_y)
+        self.x = snow_x
+        self.y = snow_y
+        self.window = window
+        self.img = self.snow_imgs[random.randint(0, 1)]
+        self.decline_speed = decline_speed
+        self.direction = 0
+        self.snow_width = self.img.get_width()
+        self.snow_height = self.img.get_height()
+        self.area_x, self.area_y, self.area_width, self.area_height = area
