@@ -1374,3 +1374,4 @@ class GameManager:
         self.Bird = Bird(GameWindow, 100, 100, DIR_BIRD, (0, 0, window_x, window_y))
         self.ScrollingBackground = ScrollingBackground(GameWindow, self.Bird, IMG_GROUND, IMG_BOTTOM_POLE, IMG_TOP_POLE,
                                                    (0, 0, window_x, window_y))
+        self.Bird.setSurface(self.ScrollingBackground.getGround_Y())
