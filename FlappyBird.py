@@ -1318,3 +1318,8 @@ class SnowFall:
 class ProgressBar:
     def __init__(self, screen, progress_rect, progress_rect_color, background_rect=None, background_rect_color=None,
                  text_color=(255, 255, 255), show_percentage=False, text_size=14, default_value=100, font_style=Font_sofiapro_light):
+        self.screen = screen
+        self.x, self.y, self.max_width, self.height = progress_rect
+        # now here deciding the current width of progress bar according to current value.
+        self.unit_width = self.max_width/100
+        self.set_value(default_value)
