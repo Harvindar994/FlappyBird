@@ -1323,3 +1323,23 @@ class ProgressBar:
         # now here deciding the current width of progress bar according to current value.
         self.unit_width = self.max_width/100
         self.set_value(default_value)
+
+        self.progress_rect_color = progress_rect_color
+        if background_rect is None:
+            self.background_rect = background_rect
+        else:
+            self.background_rect = background_rect
+            self.background_rect_color = background_rect_color
+        self.text_size = text_size
+        self.text_color = text_color
+        self.font_style = font_style
+        self.show_percentage_flag = show_percentage
+
+        # now deciding the position text.
+        test_text = out_text_file(self.screen, "100%", self.text_size, 0, 0, self.text_color, self.font_style, True)
+        text_width = test_text.get_width()
+        text_height = test_text.get_height()
+        x, y, width, height = progress_rect
+        self.text_x = x+width
+        self.text_x1 = self.text_x+text_width+8
+        self.text_y = (self.y+(self.height//2))-(text_height//2)
