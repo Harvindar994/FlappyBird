@@ -1367,3 +1367,5 @@ class ProgressBar:
         if self.show_percentage_flag:
             custom_out_text(self.screen, str(int(self.value)) + "%", self.text_x, self.text_x1, self.text_y, self.text_color,
                             self.text_size, self.font_style)
+
+class GameManager:
