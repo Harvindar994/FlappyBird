@@ -1343,3 +1343,15 @@ class ProgressBar:
         self.text_x = x+width
         self.text_x1 = self.text_x+text_width+8
         self.text_y = (self.y+(self.height//2))-(text_height//2)
+
+
+    def set_value(self, value):
+        if value >= 0 and value <= 100:
+            self.value = value
+            self.width = self.value*self.unit_width
+        elif value<=0:
+            self.value = 0
+            self.width =self.value*self.unit_width
+        elif value>=100:
+            self.value = 100
+            self.width = self.value * self.unit_width
