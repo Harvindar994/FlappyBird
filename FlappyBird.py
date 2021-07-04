@@ -1370,3 +1370,5 @@ class ProgressBar:
 
 class GameManager:
     def __init__(self):
+        global IMG_BACKGROUND, GameWindow
+        self.Bird = Bird(GameWindow, 100, 100, DIR_BIRD, (0, 0, window_x, window_y))
