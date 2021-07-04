@@ -1359,3 +1359,11 @@ class ProgressBar:
     def show_percentage(self):
         custom_out_text(self.screen, str(int(self.value)) + "%", self.text_x, self.text_x1, self.text_y, self.text_color,
                         self.text_size, self.font_style)
+
+    def show(self):
+        if self.background_rect is not None:
+            pygame.draw.rect(self.screen, self.background_rect_color, self.background_rect)
+        pygame.draw.rect(self.screen, self.progress_rect_color, (self.x, self.y, self.width, self.height))
+        if self.show_percentage_flag:
+            custom_out_text(self.screen, str(int(self.value)) + "%", self.text_x, self.text_x1, self.text_y, self.text_color,
+                            self.text_size, self.font_style)
