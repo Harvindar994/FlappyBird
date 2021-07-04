@@ -1369,3 +1369,4 @@ class ProgressBar:
                             self.text_size, self.font_style)
 
 class GameManager:
+    def __init__(self):
