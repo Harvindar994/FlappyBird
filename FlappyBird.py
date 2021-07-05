@@ -1382,3 +1382,5 @@ class GameManager:
 
         # loading image of score bord.
         self.ScoreBord = pygame.image.load(IMG_MULTICOLOR_BOX_300x92).convert_alpha()
+        self.life = ProgressBar(self.screen, (916, 32, 111, 17), (233, 14, 65), (916, 32, 111, 17), WHITE_COLOR,
+                                default_value=100)
