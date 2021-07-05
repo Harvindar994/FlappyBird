@@ -1398,3 +1398,5 @@ class GameManager:
 
         # creating an object of score manager.
         self.score = Score()
+
+    def run(self):
