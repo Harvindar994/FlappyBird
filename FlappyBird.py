@@ -1385,3 +1385,13 @@ class GameManager:
         self.life = ProgressBar(self.screen, (916, 32, 111, 17), (233, 14, 65), (916, 32, 111, 17), WHITE_COLOR,
                                 default_value=100)
         self.PolePair_Manager.life = self.life
+
+        # creating game over screen
+        self.GameOver_background = pygame.image.load("assets\\game_over\\background.png").convert_alpha()
+        self.GameOver_background_x = (window_x//2)-(self.GameOver_background.get_width()//2)
+        self.GameOver_background_y = (window_y//2)-(self.GameOver_background.get_height()//2)
+        self.GameOver_background_width = self.GameOver_background.get_width()
+        self.home_button = Button(self.screen, "assets\\game_over\\home_white.png",
+                                  "assets\\game_over\\home_skyblue.png", 566, 345, perfect_collision_check=False)
+        self.retry_button = Button(self.screen, "assets\\game_over\\retry_white.png",
+                                   "assets\\game_over\\retry_skyblue.png", 610, 345, perfect_collision_check=False)
