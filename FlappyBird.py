@@ -1378,3 +1378,7 @@ class GameManager:
         self.PolePair_Manager = self.ScrollingBackground.PolePair_Manager
         self.SnowFall = SnowFall(GameWindow, (0, 0, window_x, self.ScrollingBackground.getGround_Y()))
         self.Background = pygame.image.load(IMG_BACKGROUND).convert_alpha()
+        self.screen = GameWindow
+
+        # loading image of score bord.
+        self.ScoreBord = pygame.image.load(IMG_MULTICOLOR_BOX_300x92).convert_alpha()
