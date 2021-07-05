@@ -1376,3 +1376,4 @@ class GameManager:
                                                    (0, 0, window_x, window_y))
         self.Bird.setSurface(self.ScrollingBackground.getGround_Y())
         self.PolePair_Manager = self.ScrollingBackground.PolePair_Manager
+        self.SnowFall = SnowFall(GameWindow, (0, 0, window_x, self.ScrollingBackground.getGround_Y()))
