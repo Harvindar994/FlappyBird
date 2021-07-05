@@ -1395,3 +1395,6 @@ class GameManager:
                                   "assets\\game_over\\home_skyblue.png", 566, 345, perfect_collision_check=False)
         self.retry_button = Button(self.screen, "assets\\game_over\\retry_white.png",
                                    "assets\\game_over\\retry_skyblue.png", 610, 345, perfect_collision_check=False)
+
+        # creating an object of score manager.
+        self.score = Score()
