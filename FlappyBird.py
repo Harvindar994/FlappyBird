@@ -1400,3 +1400,4 @@ class GameManager:
         self.score = Score()
 
     def run(self):
+        self.screen.blit(self.Background, (0, 0))
