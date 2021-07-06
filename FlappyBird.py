@@ -1408,3 +1408,4 @@ class GameManager:
         if self.PolePair_Manager.LifePil.LifePilUsed and not self.PolePair_Manager.LifePil.expired:
             self.PolePair_Manager.LifePil.expired = True
             self.life.set_value(self.life.value+5)
+        value = self.game_over()
