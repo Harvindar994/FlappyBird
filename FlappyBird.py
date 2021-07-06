@@ -1415,3 +1415,5 @@ class GameManager:
             return "retry"
 
     def game_over(self):
+        if self.life.value > 0 and self.Bird.y < window_y:
+            return None
