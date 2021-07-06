@@ -1409,3 +1409,7 @@ class GameManager:
             self.PolePair_Manager.LifePil.expired = True
             self.life.set_value(self.life.value+5)
         value = self.game_over()
+        if value == "home":
+            return "home"
+        if value == "retry":
+            return "retry"
