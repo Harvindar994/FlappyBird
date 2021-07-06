@@ -1404,3 +1404,4 @@ class GameManager:
         self.SnowFall.show()
         self.ScrollingBackground.show()
         self.manage_score()
+        self.Bird.show()
