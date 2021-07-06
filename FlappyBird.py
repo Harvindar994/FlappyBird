@@ -1422,3 +1422,14 @@ class GameManager:
         pygame.image.save(GameWindow, bk_image_path)
         createBluredImg(bk_image_path, bk_image_path, sigmaX=5, ksize=(19, 19))
         background_image = pygame.image.load(bk_image_path).convert()
+        while close_game_over_screen:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    closeGame()
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if event.button == 1:
+                        x, y = event.pos
+                        if self.home_button.collide(x, y, True):
+                            return "home"
+                        if self.retry_button.collide(x, y, True):
+                            return "retry"
