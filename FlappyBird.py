@@ -1417,3 +1417,7 @@ class GameManager:
     def game_over(self):
         if self.life.value > 0 and self.Bird.y < window_y:
             return None
+        close_game_over_screen = True
+        bk_image_path = os.path.join(DIR_TEMP_DATA, "game_over_temp_background.png")
+        pygame.image.save(GameWindow, bk_image_path)
+        createBluredImg(bk_image_path, bk_image_path, sigmaX=5, ksize=(19, 19))
