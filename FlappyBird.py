@@ -1421,3 +1421,4 @@ class GameManager:
         bk_image_path = os.path.join(DIR_TEMP_DATA, "game_over_temp_background.png")
         pygame.image.save(GameWindow, bk_image_path)
         createBluredImg(bk_image_path, bk_image_path, sigmaX=5, ksize=(19, 19))
+        background_image = pygame.image.load(bk_image_path).convert()
