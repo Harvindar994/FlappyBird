@@ -1405,3 +1405,6 @@ class GameManager:
         self.ScrollingBackground.show()
         self.manage_score()
         self.Bird.show()
+        if self.PolePair_Manager.LifePil.LifePilUsed and not self.PolePair_Manager.LifePil.expired:
+            self.PolePair_Manager.LifePil.expired = True
+            self.life.set_value(self.life.value+5)
