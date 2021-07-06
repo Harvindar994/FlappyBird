@@ -1402,3 +1402,5 @@ class GameManager:
     def run(self):
         self.screen.blit(self.Background, (0, 0))
         self.SnowFall.show()
+        self.ScrollingBackground.show()
+        self.manage_score()
