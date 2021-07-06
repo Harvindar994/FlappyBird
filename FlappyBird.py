@@ -1413,3 +1413,5 @@ class GameManager:
             return "home"
         if value == "retry":
             return "retry"
+
+    def game_over(self):
