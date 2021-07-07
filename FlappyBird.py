@@ -1440,3 +1440,5 @@ class GameManager:
         self.home_button.place()
         self.retry_button.place()
         pygame.display.update()
+
+    def manage_score(self):
