@@ -1443,3 +1443,5 @@ class GameManager:
 
     def manage_score(self):
         self.life.show()
+        self.screen.blit(self.ScoreBord, (800, 0))
+        self.life.show_percentage()
