@@ -1445,3 +1445,5 @@ class GameManager:
         self.life.show()
         self.screen.blit(self.ScoreBord, (800, 0))
         self.life.show_percentage()
+        custom_out_text(self.screen, str(int(self.ScrollingBackground.PolePair_Manager.score)), 1070, 1184, 31, WHITE_COLOR, 20, Font_Kollektif)
+        
