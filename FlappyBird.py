@@ -1433,3 +1433,8 @@ class GameManager:
                             return "home"
                         if self.retry_button.collide(x, y, True):
                             return "retry"
+        self.screen.blit(background_image, [0, 0])
+            self.screen.blit(self.GameOver_background, (self.GameOver_background_x, self.GameOver_background_y))
+            custom_out_text(self.screen, str(self.PolePair_Manager.score), 431, 543, 300, WHITE_COLOR, 20, Font_Kollektif)
+            custom_out_text(self.screen, str(self.score.get_score()), 658, 770, 300, WHITE_COLOR, 20, Font_Kollektif)
+            self.home_button.place()
