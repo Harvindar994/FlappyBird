@@ -1442,3 +1442,4 @@ class GameManager:
         pygame.display.update()
 
     def manage_score(self):
+        self.life.show()
