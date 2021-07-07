@@ -1438,3 +1438,5 @@ class GameManager:
         custom_out_text(self.screen, str(self.PolePair_Manager.score), 431, 543, 300, WHITE_COLOR, 20, Font_Kollektif)
         custom_out_text(self.screen, str(self.score.get_score()), 658, 770, 300, WHITE_COLOR, 20, Font_Kollektif)
         self.home_button.place()
+        self.retry_button.place()
+        pygame.display.update()
