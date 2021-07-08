@@ -1465,3 +1465,4 @@ class GameManager:
         self.Bird.declineSpeed = 0.1
 
     def pause(self):
+        control_force_stop_loop = True
