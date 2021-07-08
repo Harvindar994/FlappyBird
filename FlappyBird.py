@@ -1457,3 +1457,5 @@ class GameManager:
         self.Bird.gravity = 0
         self.Bird.declineSpeed = 0
         self.PolePair_Manager.scroll_speed = 0
+
+    def start(self):
