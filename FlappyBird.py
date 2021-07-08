@@ -1453,3 +1453,7 @@ class GameManager:
         MOUSE POS :  (62, y1)"""
 
     def stop(self):
+        self.ScrollingBackground.scrollSpeed = 0
+        self.Bird.gravity = 0
+        self.Bird.declineSpeed = 0
+        self.PolePair_Manager.scroll_speed = 0
