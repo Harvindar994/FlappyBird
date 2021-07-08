@@ -1461,3 +1461,4 @@ class GameManager:
     def start(self):
         self.ScrollingBackground.scrollSpeed = 5
         self.Bird.gravity = 1
+        self.PolePair_Manager.scroll_speed = 5
