@@ -1451,3 +1451,5 @@ class GameManager:
         MOUSE POS :  (1184, x1) 
         MOUSE POS :  (20, y)
         MOUSE POS :  (62, y1)"""
+
+    def stop(self):
