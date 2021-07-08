@@ -1459,3 +1459,4 @@ class GameManager:
         self.PolePair_Manager.scroll_speed = 0
 
     def start(self):
+        self.ScrollingBackground.scrollSpeed = 5
