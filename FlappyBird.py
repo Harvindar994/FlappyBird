@@ -1499,3 +1499,5 @@ class DigitalClock:
         if self.showDate:
             self.date = out_text_file(GameWindow, date, self.dateFontSize, 0, 0, self.fontColor, self.font_file, True).convert_alpha()
             # self.date_x = (self.x + self.time.get_width()) - self.date.get_width()
+            if self.date_y == None:
+                self.date_y = self.y + self.time.get_height()-5
