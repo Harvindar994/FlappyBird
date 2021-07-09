@@ -1488,3 +1488,5 @@ class DigitalClock:
         self.date = ""
         self.date_x = None
         self.date_y = None
+
+    def update_time(self):
