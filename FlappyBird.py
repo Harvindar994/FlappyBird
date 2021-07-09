@@ -1493,3 +1493,5 @@ class DigitalClock:
         now = datetime.now()
         # for date.
         date = now.strftime("%B %d, %Y")
+        # for time
+        time = now.strftime("%H : %M : %S")
