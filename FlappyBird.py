@@ -1507,3 +1507,5 @@ class DigitalClock:
 
     def set_font_size(self):
         pass
+
+    def show(self):
