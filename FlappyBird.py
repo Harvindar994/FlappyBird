@@ -1470,3 +1470,6 @@ class GameManager:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     closeGame()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_p or event.key == pygame.K_ESCAPE:
+                        control_force_stop_loop = False
