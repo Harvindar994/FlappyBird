@@ -1511,3 +1511,5 @@ class DigitalClock:
     def show(self):
         self.update_time()
         self.screen.blit(self.time, (self.x, self.y))
+        if self.showDate:
+            self.screen.blit(self.date, (self.x, self.date_y))
