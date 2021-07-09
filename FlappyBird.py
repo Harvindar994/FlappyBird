@@ -1501,3 +1501,6 @@ class DigitalClock:
             # self.date_x = (self.x + self.time.get_width()) - self.date.get_width()
             if self.date_y == None:
                 self.date_y = self.y + self.time.get_height()-5
+
+    def set_position(self):
+        pass
