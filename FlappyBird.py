@@ -1509,3 +1509,4 @@ class DigitalClock:
         pass
 
     def show(self):
+        self.update_time()
