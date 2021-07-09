@@ -1491,3 +1491,5 @@ class DigitalClock:
 
     def update_time(self):
         now = datetime.now()
+        # for date.
+        date = now.strftime("%B %d, %Y")
