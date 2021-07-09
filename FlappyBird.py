@@ -1490,3 +1490,4 @@ class DigitalClock:
         self.date_y = None
 
     def update_time(self):
+        now = datetime.now()
