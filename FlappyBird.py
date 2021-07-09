@@ -1473,3 +1473,6 @@ class GameManager:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_p or event.key == pygame.K_ESCAPE:
                         control_force_stop_loop = False
+
+
+class DigitalClock:
