@@ -1478,3 +1478,13 @@ class GameManager:
 class DigitalClock:
     def __init__(self, position, font_size, dateFontSize = 20, show_date=True, font_color=WHITE_COLOR, font_file = Font_Quicksand_Regular, screen=GameWindow):
         self.x, self.y = position
+        self.screen = screen
+        self.dateFontSize = dateFontSize
+        self.fontColor = font_color
+        self.fontSize = font_size
+        self.font_file = font_file
+        self.showDate = show_date
+        self.time = ""
+        self.date = ""
+        self.date_x = None
+        self.date_y = None
