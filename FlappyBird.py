@@ -1467,3 +1467,4 @@ class GameManager:
     def pause(self):
         control_force_stop_loop = True
         while control_force_stop_loop:
+            for event in pygame.event.get():
