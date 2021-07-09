@@ -1510,3 +1510,4 @@ class DigitalClock:
 
     def show(self):
         self.update_time()
+        self.screen.blit(self.time, (self.x, self.y))
