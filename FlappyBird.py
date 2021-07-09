@@ -1497,3 +1497,5 @@ class DigitalClock:
         time = now.strftime("%H : %M : %S")
         self.time = out_text_file(GameWindow, time, self.fontSize, 0, 0, self.fontColor, self.font_file, True).convert_alpha()
         if self.showDate:
+            self.date = out_text_file(GameWindow, date, self.dateFontSize, 0, 0, self.fontColor, self.font_file, True).convert_alpha()
+            # self.date_x = (self.x + self.time.get_width()) - self.date.get_width()
