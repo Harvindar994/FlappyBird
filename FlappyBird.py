@@ -1516,3 +1516,4 @@ class DigitalClock:
 
 
 class SliderEffact:
+    def __init__(self, screen):
