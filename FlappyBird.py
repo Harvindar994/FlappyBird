@@ -1520,3 +1520,4 @@ class SliderEffact:
         self.effactImage = pygame.image.load("assets\\GameMenu\\SliderEffact\\effact_1.png").convert_alpha()
         self.x = 0
         self.y = 0
+        self.motion_delay_time = 0.1
