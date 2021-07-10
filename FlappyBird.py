@@ -1521,3 +1521,5 @@ class SliderEffact:
         self.x = 0
         self.y = 0
         self.motion_delay_time = 0.1
+        self.screen = screen
+        self.step = 40
