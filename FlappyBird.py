@@ -1533,3 +1533,4 @@ class SliderEffact:
         self.x += self.step
 
 class GameMenu:
+    def __init__(self):
