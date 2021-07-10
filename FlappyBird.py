@@ -1523,3 +1523,5 @@ class SliderEffact:
         self.motion_delay_time = 0.1
         self.screen = screen
         self.step = 40
+
+    def show(self):
