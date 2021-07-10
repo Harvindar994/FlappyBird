@@ -1526,3 +1526,8 @@ class SliderEffact:
 
     def show(self):
         self.screen.blit(self.effactImage, (self.x, self.y))
+        if self.x > 1200:
+            self.step = self.step * -1
+        if self.x < 0:
+            self.step = self.step * -1
+        self.x += self.step
