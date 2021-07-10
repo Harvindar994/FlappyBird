@@ -1525,3 +1525,4 @@ class SliderEffact:
         self.step = 40
 
     def show(self):
+        self.screen.blit(self.effactImage, (self.x, self.y))
