@@ -1531,3 +1531,5 @@ class SliderEffact:
         if self.x < 0:
             self.step = self.step * -1
         self.x += self.step
+
+class GameMenu:
