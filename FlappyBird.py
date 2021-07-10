@@ -1517,3 +1517,4 @@ class DigitalClock:
 
 class SliderEffact:
     def __init__(self, screen):
+        self.effactImage = pygame.image.load("assets\\GameMenu\\SliderEffact\\effact_1.png").convert_alpha()
