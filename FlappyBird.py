@@ -1540,3 +1540,4 @@ class GameMenu:
         self.loading_sound_effact = False
         self.loading_background_music = False
         self.loading_game_components = False
+        welcome_screen_thread = threading.Thread(target=self.welcome_screen)
