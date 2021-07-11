@@ -1535,3 +1535,4 @@ class SliderEffact:
 class GameMenu:
     def __init__(self):
         self.loading_setting_components = False
+        self.loading_about_components = False
