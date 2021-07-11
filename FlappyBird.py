@@ -1538,3 +1538,4 @@ class GameMenu:
         self.loading_about_components = False
         self.loading_store_components = False
         self.loading_sound_effact = False
+        self.loading_background_music = False
