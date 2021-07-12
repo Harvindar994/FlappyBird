@@ -1556,3 +1556,6 @@ class GameMenu:
         while self.close_welcome_screen:
             time.sleep(1)
         self.show()
+
+        # creating a variable to resume and pause game.
+        self.GamePaused = True
