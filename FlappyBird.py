@@ -1544,3 +1544,4 @@ class GameMenu:
         welcome_screen_thread.start()
         self.close_welcome_screen = True
         self.SettingData = Setting()
+        self.SettingData.get()
