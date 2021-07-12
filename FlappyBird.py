@@ -1553,3 +1553,5 @@ class GameMenu:
             self.theme_2()
         self.game_component()
         time.sleep(5)
+        while self.close_welcome_screen:
+            time.sleep(1)
