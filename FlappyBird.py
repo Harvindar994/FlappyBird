@@ -1551,3 +1551,4 @@ class GameMenu:
             self.theme_1()
         elif self.SettingData.theme == 2:
             self.theme_2()
+        self.game_component()
