@@ -1545,3 +1545,4 @@ class GameMenu:
         self.close_welcome_screen = True
         self.SettingData = Setting()
         self.SettingData.get()
+        self.loader_White = Loader(GameWindow, "assets\\Loader\\infinite_loader\\white", 562, 140, window_x, window_y)
