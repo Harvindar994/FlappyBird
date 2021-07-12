@@ -1555,3 +1555,4 @@ class GameMenu:
         time.sleep(5)
         while self.close_welcome_screen:
             time.sleep(1)
+        self.show()
