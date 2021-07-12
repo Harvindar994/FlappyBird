@@ -1559,3 +1559,5 @@ class GameMenu:
 
         # creating a variable to resume and pause game.
         self.GamePaused = True
+
+    def welcome_screen(self):
