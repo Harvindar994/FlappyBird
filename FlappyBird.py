@@ -1547,4 +1547,7 @@ class GameMenu:
         self.SettingData.get()
         self.loader_White = Loader(GameWindow, "assets\\Loader\\infinite_loader\\white", 562, 140, window_x, window_y)
         self.loader_Black = Loader(GameWindow, "assets\\Loader\\infinite_loader\\black", 562, 140, window_x, window_y)
-        
+        if self.SettingData.theme == 1:
+            self.theme_1()
+        elif self.SettingData.theme == 2:
+            self.theme_2()
