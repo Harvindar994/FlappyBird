@@ -1566,3 +1566,5 @@ class GameMenu:
         self.close_welcome_screen = True
         # loading process.
         percentage = 0
+        step = 10.89
+        point_loading_assets = 0
