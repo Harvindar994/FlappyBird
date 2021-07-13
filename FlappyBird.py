@@ -1564,3 +1564,5 @@ class GameMenu:
         global GameWindow
         background = pygame.image.load("assets\\GameMenu\\background\\WelcomeScreen\\5.png").convert_alpha()
         self.close_welcome_screen = True
+        # loading process.
+        percentage = 0
