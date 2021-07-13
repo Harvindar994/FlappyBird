@@ -1576,4 +1576,5 @@ class GameMenu:
 
             GameWindow.blit(background, (0, 0))
             pygame.draw.rect(GameWindow, (196, 42, 37), (55, 459, 1089, 4))
-            
+            pygame.draw.rect(GameWindow, (255, 255, 255), (55, 459, int(step*percentage), 4))
+            custom_out_text(GameWindow, str(int(percentage))+"%", 558, 646, 482, WHITE_COLOR, 20, Font_Kollektif)
