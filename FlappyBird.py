@@ -1573,3 +1573,7 @@ class GameMenu:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     closeGame()
+
+            GameWindow.blit(background, (0, 0))
+            pygame.draw.rect(GameWindow, (196, 42, 37), (55, 459, 1089, 4))
+            
