@@ -1561,3 +1561,4 @@ class GameMenu:
         self.GamePaused = True
 
     def welcome_screen(self):
+        global GameWindow
