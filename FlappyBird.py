@@ -1568,3 +1568,5 @@ class GameMenu:
         percentage = 0
         step = 10.89
         point_loading_assets = 0
+        last_updation = True
+        while self.close_welcome_screen:
