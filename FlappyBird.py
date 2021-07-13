@@ -1570,3 +1570,6 @@ class GameMenu:
         point_loading_assets = 0
         last_updation = True
         while self.close_welcome_screen:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    closeGame()
