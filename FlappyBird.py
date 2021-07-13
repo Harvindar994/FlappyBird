@@ -1581,3 +1581,5 @@ class GameMenu:
 
             if percentage < 100:
                 point_loading_assets += 1
+                if point_loading_assets > 6:
+                    point_loading_assets = 0
