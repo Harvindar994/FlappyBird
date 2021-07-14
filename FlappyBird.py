@@ -1607,4 +1607,8 @@ class GameMenu:
             status_y += font_size + 5
             if percentage > 7:
                 out_text_file(GameWindow, "Loading menu components...", font_size, 55, status_y, WHITE_COLOR, Font_Kollektif)
+            
             status_y += font_size + 5
+            if self.loading_about_components:
+                out_text_file(GameWindow, "Loading about components...", font_size, 55, status_y, WHITE_COLOR,
+                              Font_Kollektif)
