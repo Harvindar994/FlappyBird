@@ -1588,4 +1588,5 @@ class GameMenu:
             else:
                 custom_out_text(GameWindow, "All assets and components loaded successfully", 406, 806, 419, WHITE_COLOR, 20, Font_Quicksand_Bold)
 
-            
+            status_y = 80
+            font_size = 16
