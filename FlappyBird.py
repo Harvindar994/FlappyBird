@@ -1603,3 +1603,5 @@ class GameMenu:
             if percentage > 6:
                 out_text_file(GameWindow, "Loading status", font_size, 55, status_y, WHITE_COLOR,
                               Font_Kollektif)
+
+            status_y += font_size + 5
