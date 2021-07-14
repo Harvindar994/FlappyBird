@@ -1590,3 +1590,6 @@ class GameMenu:
 
             status_y = 80
             font_size = 16
+            if percentage > 4:
+                out_text_file(GameWindow, "Game development by", font_size, 55, status_y, WHITE_COLOR,
+                              Font_Kollektif)
