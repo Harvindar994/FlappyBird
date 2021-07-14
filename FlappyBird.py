@@ -1605,3 +1605,6 @@ class GameMenu:
                               Font_Kollektif)
 
             status_y += font_size + 5
+            if percentage > 7:
+                out_text_file(GameWindow, "Loading menu components...", font_size, 55, status_y, WHITE_COLOR, Font_Kollektif)
+            status_y += font_size + 5
