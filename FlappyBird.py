@@ -1583,3 +1583,5 @@ class GameMenu:
                 point_loading_assets += 1
                 if point_loading_assets > 6:
                     point_loading_assets = 0
+                percentage += 0.5
+                out_text_file(GameWindow, "Loading assets"+("."*point_loading_assets), 20, 526, 424, WHITE_COLOR, Font_Quicksand_Bold)
