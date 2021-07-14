@@ -1585,3 +1585,7 @@ class GameMenu:
                     point_loading_assets = 0
                 percentage += 0.5
                 out_text_file(GameWindow, "Loading assets"+("."*point_loading_assets), 20, 526, 424, WHITE_COLOR, Font_Quicksand_Bold)
+            else:
+                custom_out_text(GameWindow, "All assets and components loaded successfully", 406, 806, 419, WHITE_COLOR, 20, Font_Quicksand_Bold)
+
+            
