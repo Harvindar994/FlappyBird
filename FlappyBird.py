@@ -1647,3 +1647,4 @@ class GameMenu:
                 self.close_welcome_screen = False
 
     def theme_1(self):
+        font_color = WHITE_COLOR
