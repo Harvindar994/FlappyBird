@@ -1629,3 +1629,7 @@ class GameMenu:
                 out_text_file(GameWindow, "Loading background music...", font_size, 55, status_y, WHITE_COLOR,
                               Font_Kollektif)
             status_y += font_size + 5
+            if self.loading_game_components:
+                out_text_file(GameWindow, "Loading game components...", font_size, 55, status_y, WHITE_COLOR,
+                              Font_Kollektif)
+            status_y += font_size + 5
