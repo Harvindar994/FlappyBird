@@ -1638,3 +1638,10 @@ class GameMenu:
                               Font_Kollektif)
             pygame.display.update()
             clock.tick(30)
+            if percentage >= 100:
+                if last_updation:
+                    last_updation = False
+                    continue
+                time.sleep(1)
+                fadeout(GameWindow, self.Menu_fadeOutImage, 0, 0)
+                self.close_welcome_screen = False
