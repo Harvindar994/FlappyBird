@@ -1645,3 +1645,5 @@ class GameMenu:
                 time.sleep(1)
                 fadeout(GameWindow, self.Menu_fadeOutImage, 0, 0)
                 self.close_welcome_screen = False
+
+    def theme_1(self):
