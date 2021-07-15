@@ -1636,3 +1636,5 @@ class GameMenu:
             if percentage >= 100:
                 out_text_file(GameWindow, "Starting game...", font_size, 55, status_y, WHITE_COLOR,
                               Font_Kollektif)
+            pygame.display.update()
+            clock.tick(30)
