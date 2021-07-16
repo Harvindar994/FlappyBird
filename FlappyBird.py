@@ -1663,3 +1663,5 @@ class GameMenu:
         self.logo_Brightgoal_x = self.get_x_to_place_image_at_center(self.logo_Brightgoal, 1200)
         self.text_Brightgoal_x = self.get_x_to_place_image_at_center(self.text_Brightgoal, 1200)
         self.text_author_name_x = 50+self.get_x_to_place_image_at_center(self.text_author_name, 1200)
+
+        #loading all buttons
