@@ -1652,3 +1652,4 @@ class GameMenu:
                    pygame.image.load(IMG_GMENU_BACKGROUND_2_T1).convert_alpha(),
                    pygame.image.load(IMG_GMENU_BACKGROUND_3_T1).convert_alpha()]
         self.menuImg = pygame.image.load(IMG_MENU).convert_alpha()
+        self.snowFall = SnowFall(GameWindow, (0, 0, window_x, window_y))
