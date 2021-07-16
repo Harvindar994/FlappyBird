@@ -1657,3 +1657,9 @@ class GameMenu:
         self.text_Brightgoal = out_text_file(GameWindow, "Brightgoal", 60, 0, 0, WHITE_COLOR, Font_Quicksand_Regular, True)
         self.text_author_name = out_text_file(GameWindow, "By Harvindar singh", 25, 0, 0, WHITE_COLOR,
                                               Font_Quicksand_Regular, True)
+
+        self.text_GameName = out_text_file(GameWindow, "Flappy Bird", 60, 0, 0, WHITE_COLOR, Font_Quicksand_Regular, True)
+        self.text_GameName_x = self.get_x_to_place_image_at_center(self.text_GameName, 1200)
+        self.logo_Brightgoal_x = self.get_x_to_place_image_at_center(self.logo_Brightgoal, 1200)
+        self.text_Brightgoal_x = self.get_x_to_place_image_at_center(self.text_Brightgoal, 1200)
+        self.text_author_name_x = 50+self.get_x_to_place_image_at_center(self.text_author_name, 1200)
