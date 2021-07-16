@@ -1665,3 +1665,6 @@ class GameMenu:
         self.text_author_name_x = 50+self.get_x_to_place_image_at_center(self.text_author_name, 1200)
 
         #loading all buttons
+        self.PlayButton = Button(GameWindow, "assets\\GameMenu\\button\\play_black.png",
+                                 "assets\\GameMenu\\button\\play_purple.png",
+                                 170, 350)
