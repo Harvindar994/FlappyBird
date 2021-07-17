@@ -1683,3 +1683,6 @@ class GameMenu:
 
         self.twitterButton = Button(GameWindow, "assets\\GameMenu\\button\\twitter.png",
                                     None, 510, 465, press_effact=True)
+
+        self.youtubeButton = Button(GameWindow, "assets\\GameMenu\\button\\youtube.png",
+                                    None, self.twitterButton.x+50, self.twitterButton.y, press_effact=True)
