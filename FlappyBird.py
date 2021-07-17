@@ -1692,3 +1692,7 @@ class GameMenu:
 
         self.instaButton = Button(GameWindow, "assets\\GameMenu\\button\\insta.png",
                                   None, self.facebookButton.x+50, self.twitterButton.y, press_effact=True)
+
+        # sort about text
+        self.text_1 = out_text_file(GameWindow, "visit on official website for more information", 20, 0, 0, WHITE_COLOR,
+                                            Font_sofiapro_light, True)
