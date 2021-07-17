@@ -1703,3 +1703,5 @@ class GameMenu:
         self.text_1_x = self.get_x_to_place_image_at_center(self.text_1, 1200)
 
         self.officalWebsite_x = self.get_x_to_place_image_at_center(self.officalWebsite, 1200)
+
+        self.digitalClock = DigitalClock((100, 60), 30, 17,font_file=Font_sofiapro_light)
