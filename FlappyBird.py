@@ -1701,3 +1701,5 @@ class GameMenu:
                                             Font_sofiapro_light, True)
 
         self.text_1_x = self.get_x_to_place_image_at_center(self.text_1, 1200)
+
+        self.officalWebsite_x = self.get_x_to_place_image_at_center(self.officalWebsite, 1200)
