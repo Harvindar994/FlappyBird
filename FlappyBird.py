@@ -1696,3 +1696,6 @@ class GameMenu:
         # sort about text
         self.text_1 = out_text_file(GameWindow, "visit on official website for more information", 20, 0, 0, WHITE_COLOR,
                                             Font_sofiapro_light, True)
+
+        self.officalWebsite = out_text_file(GameWindow, "www.brightgoal.in", 20, 0, 0, WHITE_COLOR,
+                                            Font_sofiapro_light, True)
