@@ -1708,3 +1708,4 @@ class GameMenu:
         self.bird = Bird(GameWindow, 500, 70, "assets\\GameMenu\\menu\\Bird", (0, 0, 1200, 600))
         self.bird.gravity = 0
         self.bird.declineSpeed = 0
+        self.bird.x = self.get_x_to_place_image_at_center(self.bird.birds[0], 1200)
