@@ -1733,3 +1733,6 @@ class GameMenu:
 
         self.about_text_2 = out_text_file(GameWindow, "I am passionate about my work so I like to work on different projects.",
                                     font_size, 0, 0, font_color, font_style, True)
+
+        self.about_text_3 = out_text_file(GameWindow, "Visit on official website of brightgoal for more information. https://www.brightgoal.in/",
+                                    font_size, 0, 0, font_color, font_style, True)
