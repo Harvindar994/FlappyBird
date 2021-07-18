@@ -1706,3 +1706,5 @@ class GameMenu:
 
         self.digitalClock = DigitalClock((100, 60), 30, 17,font_file=Font_sofiapro_light)
         self.bird = Bird(GameWindow, 500, 70, "assets\\GameMenu\\menu\\Bird", (0, 0, 1200, 600))
+        self.bird.gravity = 0
+        self.bird.declineSpeed = 0
