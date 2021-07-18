@@ -1709,3 +1709,6 @@ class GameMenu:
         self.bird.gravity = 0
         self.bird.declineSpeed = 0
         self.bird.x = self.get_x_to_place_image_at_center(self.bird.birds[0], 1200)
+
+        # loading image for fade out.
+        self.Menu_fadeOutImage = pygame.image.load("assets\\GameMenu\\background\\Theme_1\\fadeout.png")
