@@ -1712,3 +1712,6 @@ class GameMenu:
 
         # loading image for fade out.
         self.Menu_fadeOutImage = pygame.image.load("assets\\GameMenu\\background\\Theme_1\\fadeout.png")
+
+        # animation effacts.
+        self.SliderEffact = SliderEffact(GameWindow)
