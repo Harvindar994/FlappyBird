@@ -1739,3 +1739,6 @@ class GameMenu:
 
         self.about_text_4 = out_text_file(GameWindow, "if you want more projects like this project visit on the official store of brightgoal.",
                                     font_size, 0, 0, font_color, font_style, True)
+
+        self.about_text_5 = out_text_file(GameWindow, "Store link : https://www.instamojo.com/Brightgoal/",
+                                          font_size, 0, 0, font_color, font_style, True)
