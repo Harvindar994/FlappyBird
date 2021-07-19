@@ -1748,3 +1748,6 @@ class GameMenu:
         self.about_text_3_x = self.get_x_to_place_image_at_center(self.about_text_3, 1200)
         self.about_text_4_x = self.get_x_to_place_image_at_center(self.about_text_4, 1200)
         self.about_text_5_x = self.get_x_to_place_image_at_center(self.about_text_5, 1200)
+
+        self.aboutBack_Button = Button(GameWindow, "assets\\GameMenu\\button\\back_black.png",
+                                       "assets\\GameMenu\\button\\back_purple.png", 1070, 58)
