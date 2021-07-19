@@ -1755,3 +1755,5 @@ class GameMenu:
         # creating all component of setting.
         self.loading_setting_components = True
         font_style = Font_sofiapro_light
+        self.text_setting = out_text_file(GameWindow, "Setting", 60, 0, 0, font_color, Font_Quicksand_Regular, True)
+        self.text_setting_x = self.get_x_to_place_image_at_center(self.text_setting, 1200)
