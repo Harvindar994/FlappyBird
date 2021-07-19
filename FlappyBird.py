@@ -1764,3 +1764,9 @@ class GameMenu:
                                                    "assets\\GameMenu\\button\\Theme_1\\slider_purple.png",
                                                    non_filled_bar_color=font_color, text_color=font_color,
                                                    defult_value=self.SettingData.background_music_volume)
+
+        self.setting_sound_effact = Scroll_Button(GameWindow, 380, 1000, 276, 4,
+                                                  "assets\\GameMenu\\button\\Theme_1\\slider_black.png",
+                                                  "assets\\GameMenu\\button\\Theme_1\\slider_purple.png",
+                                                  non_filled_bar_color=font_color, text_color=font_color,
+                                                  defult_value=self.SettingData.sound_effact_volume)
