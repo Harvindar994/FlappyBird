@@ -1751,3 +1751,7 @@ class GameMenu:
 
         self.aboutBack_Button = Button(GameWindow, "assets\\GameMenu\\button\\back_black.png",
                                        "assets\\GameMenu\\button\\back_purple.png", 1070, 58)
+
+        # creating all component of setting.
+        self.loading_setting_components = True
+        font_style = Font_sofiapro_light
