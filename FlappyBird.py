@@ -1759,3 +1759,8 @@ class GameMenu:
         self.text_setting_x = self.get_x_to_place_image_at_center(self.text_setting, 1200)
         self.text_Music = out_text_file(GameWindow, "Background Music", 22, 0, 0, font_color, font_style, True)
         self.text_sound_effact = out_text_file(GameWindow, "Sound Effact", 22, 0, 0, font_color, font_style, True)
+        self.setting_Volume_button = Scroll_Button(GameWindow, 380, 1000, 216, 4,
+                                                   "assets\\GameMenu\\button\\Theme_1\\slider_black.png",
+                                                   "assets\\GameMenu\\button\\Theme_1\\slider_purple.png",
+                                                   non_filled_bar_color=font_color, text_color=font_color,
+                                                   defult_value=self.SettingData.background_music_volume)
