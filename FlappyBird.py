@@ -1770,3 +1770,5 @@ class GameMenu:
                                                   "assets\\GameMenu\\button\\Theme_1\\slider_purple.png",
                                                   non_filled_bar_color=font_color, text_color=font_color,
                                                   defult_value=self.SettingData.sound_effact_volume)
+
+        self.text_theme = out_text_file(GameWindow, "Theme", 22, 0, 0, font_color, font_style, True)
