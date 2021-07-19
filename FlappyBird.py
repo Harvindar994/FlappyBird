@@ -1772,3 +1772,8 @@ class GameMenu:
                                                   defult_value=self.SettingData.sound_effact_volume)
 
         self.text_theme = out_text_file(GameWindow, "Theme", 22, 0, 0, font_color, font_style, True)
+        self.light_theme = RadioButton(GameWindow, "Light Theme", 22, "assets\\GameMenu\\button\\Theme_1\\radio.png",
+                                       "assets\\GameMenu\\button\\Theme_1\\radio_active.png",
+                                       "assets\\GameMenu\\button\\Theme_1\\radio_hover.png", 625, 320, "theme",
+                                       True if self.SettingData.theme == 2 else False,
+                                       font_style=font_style, text_color=font_color)
