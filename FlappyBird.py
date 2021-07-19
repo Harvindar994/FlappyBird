@@ -1757,3 +1757,5 @@ class GameMenu:
         font_style = Font_sofiapro_light
         self.text_setting = out_text_file(GameWindow, "Setting", 60, 0, 0, font_color, Font_Quicksand_Regular, True)
         self.text_setting_x = self.get_x_to_place_image_at_center(self.text_setting, 1200)
+        self.text_Music = out_text_file(GameWindow, "Background Music", 22, 0, 0, font_color, font_style, True)
+        self.text_sound_effact = out_text_file(GameWindow, "Sound Effact", 22, 0, 0, font_color, font_style, True)
