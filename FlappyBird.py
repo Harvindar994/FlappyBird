@@ -1805,3 +1805,5 @@ class GameMenu:
         self.loading_store_components = True
         # here i will create and load all component of about session.
         self.loading_sound_effact = True
+        self.sound_manager = SoundManager()  # creating an object of sound_manager class this class will store all sound effact and background music.
+        self.sound_manager.load_sound(SOUND_BUTTON_CLICK, "assets\\sound\\sound_effacts\\button_click.wav", self.SettingData.sound_effact_volume*0.01)
