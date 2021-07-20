@@ -1789,3 +1789,5 @@ class GameMenu:
                                       "assets\\GameMenu\\button\\Theme_1\\radio_hover.png", 839, 320, "theme",
                                       True if self.SettingData.theme == 1 else False,
                                       font_style=font_style, text_color=font_color)
+
+        self.text_game_sound = out_text_file(GameWindow, "Game Sound", 22, 0, 0, font_color, font_style, True)
