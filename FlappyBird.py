@@ -1801,3 +1801,5 @@ class GameMenu:
                                      "assets\\GameMenu\\button\\Theme_1\\radio_hover.png", 930, 380, "game_sound",
                                      True if not self.SettingData.game_sound else False,
                                      font_style=font_style, text_color=font_color)
+
+        self.loading_store_components = True
