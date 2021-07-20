@@ -1809,3 +1809,5 @@ class GameMenu:
         self.sound_manager.load_sound(SOUND_BUTTON_CLICK, "assets\\sound\\sound_effacts\\button_click.wav", self.SettingData.sound_effact_volume*0.01)
         self.sound_manager.load_sound(SOUND_DIE, "assets\\sound\\sound_effacts\\die.wav", self.SettingData.sound_effact_volume*0.01)
         self.sound_manager.load_sound(SOUND_HIT, "assets\\sound\\sound_effacts\\hit.wav", self.SettingData.sound_effact_volume*0.01)
+        self.sound_manager.load_sound(SOUND_POINT, "assets\\sound\\sound_effacts\\point.wav", self.SettingData.sound_effact_volume*0.01)
+        self.sound_manager.load_sound(SOUND_WING, "assets\\sound\\sound_effacts\\wing.wav", self.SettingData.sound_effact_volume*0.01)
