@@ -1783,7 +1783,7 @@ class GameMenu:
                                       "assets\\GameMenu\\button\\Theme_1\\radio_hover.png", 839, 320, "theme",
                                       True if self.SettingData.theme == 1 else False,
                                       font_style=font_style, text_color=font_color)
-        
+
         self.dark_theme = RadioButton(GameWindow, "Dark Theme", 22, "assets\\GameMenu\\button\\Theme_1\\radio.png",
                                       "assets\\GameMenu\\button\\Theme_1\\radio_active.png",
                                       "assets\\GameMenu\\button\\Theme_1\\radio_hover.png", 839, 320, "theme",
