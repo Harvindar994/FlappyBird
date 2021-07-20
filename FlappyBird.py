@@ -1795,3 +1795,9 @@ class GameMenu:
                                     "assets\\GameMenu\\button\\Theme_1\\radio_active.png",
                                     "assets\\GameMenu\\button\\Theme_1\\radio_hover.png", 786, 380, "game_sound",
                                     self.SettingData.game_sound, font_style=font_style, text_color=font_color)
+
+        self.sound_off = RadioButton(GameWindow, "Off", 22, "assets\\GameMenu\\button\\Theme_1\\radio.png",
+                                     "assets\\GameMenu\\button\\Theme_1\\radio_active.png",
+                                     "assets\\GameMenu\\button\\Theme_1\\radio_hover.png", 930, 380, "game_sound",
+                                     True if not self.SettingData.game_sound else False,
+                                     font_style=font_style, text_color=font_color)
