@@ -1803,3 +1803,5 @@ class GameMenu:
                                      font_style=font_style, text_color=font_color)
 
         self.loading_store_components = True
+        # here i will create and load all component of about session.
+        self.loading_sound_effact = True
