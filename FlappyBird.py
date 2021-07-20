@@ -1791,3 +1791,7 @@ class GameMenu:
                                       font_style=font_style, text_color=font_color)
 
         self.text_game_sound = out_text_file(GameWindow, "Game Sound", 22, 0, 0, font_color, font_style, True)
+        self.sound_on = RadioButton(GameWindow, "On", 22, "assets\\GameMenu\\button\\Theme_1\\radio.png",
+                                    "assets\\GameMenu\\button\\Theme_1\\radio_active.png",
+                                    "assets\\GameMenu\\button\\Theme_1\\radio_hover.png", 786, 380, "game_sound",
+                                    self.SettingData.game_sound, font_style=font_style, text_color=font_color)
