@@ -1825,3 +1825,5 @@ class GameMenu:
         self.bg = [pygame.image.load(IMG_GMENU_BACKGROUND_1_T2).convert_alpha(),
                    pygame.image.load(IMG_GMENU_BACKGROUND_1_T2).convert_alpha(),
                    pygame.image.load(IMG_GMENU_BACKGROUND_1_T2).convert_alpha()]
+        self.menuImg = pygame.image.load("assets\\GameMenu\\menu\\light_theme_menu.png").convert_alpha()
+        self.snowFall = SnowFall(GameWindow, (0, 0, window_x, window_y))
