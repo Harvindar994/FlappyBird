@@ -1812,3 +1812,5 @@ class GameMenu:
         self.sound_manager.load_sound(SOUND_POINT, "assets\\sound\\sound_effacts\\point.wav", self.SettingData.sound_effact_volume*0.01)
         self.sound_manager.load_sound(SOUND_WING, "assets\\sound\\sound_effacts\\wing.wav", self.SettingData.sound_effact_volume*0.01)
         self.loading_background_music = True
+        self.sound_manager.load_sound(SOUND_BACKGROUND, "assets\\sound\\Theme_1\\background_music\\The Wolf And The Moon.wav", self.SettingData.background_music_volume*0.01)
+        self.sound_manager.play_sound(SOUND_BACKGROUND, -1)
