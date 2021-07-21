@@ -1822,3 +1822,6 @@ class GameMenu:
     def theme_2(self):
         font_color = BLACK_COLOR
         font_style = Font_Quicksand_Regular
+        self.bg = [pygame.image.load(IMG_GMENU_BACKGROUND_1_T2).convert_alpha(),
+                   pygame.image.load(IMG_GMENU_BACKGROUND_1_T2).convert_alpha(),
+                   pygame.image.load(IMG_GMENU_BACKGROUND_1_T2).convert_alpha()]
