@@ -1820,3 +1820,5 @@ class GameMenu:
 
 
     def theme_2(self):
+        font_color = BLACK_COLOR
+        font_style = Font_Quicksand_Regular
