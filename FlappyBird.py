@@ -1827,3 +1827,7 @@ class GameMenu:
                    pygame.image.load(IMG_GMENU_BACKGROUND_1_T2).convert_alpha()]
         self.menuImg = pygame.image.load("assets\\GameMenu\\menu\\light_theme_menu.png").convert_alpha()
         self.snowFall = SnowFall(GameWindow, (0, 0, window_x, window_y))
+        self.logo_Brightgoal = pygame.image.load(IMG_LOGO).convert_alpha()
+        self.text_Brightgoal = out_text_file(GameWindow, "Brightgoal", 60, 0, 0, font_color, font_style, True)
+        self.text_author_name = out_text_file(GameWindow, "By Harvindar singh", 25, 0, 0, font_color,
+                                              font_style, True)
