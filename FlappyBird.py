@@ -1814,3 +1814,6 @@ class GameMenu:
         self.loading_background_music = True
         self.sound_manager.load_sound(SOUND_BACKGROUND, "assets\\sound\\Theme_1\\background_music\\The Wolf And The Moon.wav", self.SettingData.background_music_volume*0.01)
         self.sound_manager.play_sound(SOUND_BACKGROUND, -1)
+        self.loading_game_components = True
+        self.init_Game()
+        self.loader_Black.active_state = False
