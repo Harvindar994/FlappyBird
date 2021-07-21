@@ -1819,4 +1819,4 @@ class GameMenu:
         self.loader_Black.active_state = False
 
 
-    
+    def theme_2(self):
