@@ -1859,3 +1859,6 @@ class GameMenu:
 
         self.youtubeButton = Button(GameWindow, "assets\\GameMenu\\button\\youtube.png",
                                     None, self.twitterButton.x+50, self.twitterButton.y, press_effact=True)
+
+        self.facebookButton = Button(GameWindow, "assets\\GameMenu\\button\\facebook.png",
+                                     None, self.youtubeButton.x+50, self.twitterButton.y, press_effact=True)
