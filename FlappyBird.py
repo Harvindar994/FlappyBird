@@ -1865,3 +1865,6 @@ class GameMenu:
 
         self.instaButton = Button(GameWindow, "assets\\GameMenu\\button\\insta.png",
                                   None, self.facebookButton.x+50, self.twitterButton.y, press_effact=True)
+
+        # loading image for fadeout.
+        self.Menu_fadeOutImage = pygame.image.load("assets\\GameMenu\\background\\Theme_2\\fadeout.png")
