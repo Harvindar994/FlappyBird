@@ -1862,3 +1862,6 @@ class GameMenu:
 
         self.facebookButton = Button(GameWindow, "assets\\GameMenu\\button\\facebook.png",
                                      None, self.youtubeButton.x+50, self.twitterButton.y, press_effact=True)
+
+        self.instaButton = Button(GameWindow, "assets\\GameMenu\\button\\insta.png",
+                                  None, self.facebookButton.x+50, self.twitterButton.y, press_effact=True)
