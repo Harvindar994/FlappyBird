@@ -1868,3 +1868,7 @@ class GameMenu:
 
         # loading image for fadeout.
         self.Menu_fadeOutImage = pygame.image.load("assets\\GameMenu\\background\\Theme_2\\fadeout.png")
+
+        # sort about text
+        self.text_1 = out_text_file(GameWindow, "visit on official website for more information", 20, 0, 0, font_color,
+                                            Font_sofiapro_light, True)
