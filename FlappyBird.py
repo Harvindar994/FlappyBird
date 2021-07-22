@@ -1841,7 +1841,7 @@ class GameMenu:
         self.PlayButton = Button(GameWindow, "assets\\GameMenu\\button\\play_black.png",
                                  "assets\\GameMenu\\button\\play_purple.png",
                                  170, 350)
-        
+
         self.SettingButton = Button(GameWindow, "assets\\GameMenu\\button\\setting_black.png",
                                     "assets\\GameMenu\\button\\setting_purple.png",
                                     self.PlayButton.x+220, self.PlayButton.y)
@@ -1849,3 +1849,7 @@ class GameMenu:
         self.AboutButton = Button(GameWindow, "assets\\GameMenu\\button\\about_black.png",
                                   "assets\\GameMenu\\button\\about_purple.png",
                                   self.SettingButton.x+220, self.PlayButton.y)
+
+        self.storeButton = Button(GameWindow, "assets\\GameMenu\\button\\store_black.png",
+                                  "assets\\GameMenu\\button\\store_purple.png",
+                                  self.AboutButton.x+220, self.PlayButton.y)
