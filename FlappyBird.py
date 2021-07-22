@@ -1853,3 +1853,6 @@ class GameMenu:
         self.storeButton = Button(GameWindow, "assets\\GameMenu\\button\\store_black.png",
                                   "assets\\GameMenu\\button\\store_purple.png",
                                   self.AboutButton.x+220, self.PlayButton.y)
+
+        self.twitterButton = Button(GameWindow, "assets\\GameMenu\\button\\twitter.png",
+                                    None, 510, 465, press_effact=True)
