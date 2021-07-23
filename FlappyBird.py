@@ -1894,3 +1894,8 @@ class GameMenu:
         self.ResetBgChangeTime = True
         self.CloseMenu = True
         self.timeList = [0.1, 0.2, 0.3, 0.4, 0.5]
+
+        # component of about session
+        self.loading_about_components = True
+        font_size = 20
+        font_style = Font_sofiapro_light
