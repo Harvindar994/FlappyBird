@@ -1875,3 +1875,8 @@ class GameMenu:
 
         self.officalWebsite = out_text_file(GameWindow, "www.brightgoal.in", 20, 0, 0, font_color,
                                             Font_sofiapro_light, True)
+        self.text_1_x = self.get_x_to_place_image_at_center(self.text_1, 1200)
+        self.officalWebsite_x = self.get_x_to_place_image_at_center(self.officalWebsite, 1200)
+
+        self.digitalClock = DigitalClock((100, 60), 30, 17,font_file=Font_sofiapro_light, font_color=font_color)
+        self.bird = Bird(GameWindow, 500, 70, "assets\\GameMenu\\menu\\Bird", (0, 0, 1200, 600))
