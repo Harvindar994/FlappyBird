@@ -1909,3 +1909,9 @@ class GameMenu:
                                     font_size, 0, 0, font_color, font_style, True)
         self.about_text_5 = out_text_file(GameWindow, "Store link : https://www.instamojo.com/Brightgoal/",
                                           font_size, 0, 0, font_color, font_style, True)
+
+        self.about_text_1_x = self.get_x_to_place_image_at_center(self.about_text_1, 1200)
+        self.about_text_2_x = self.get_x_to_place_image_at_center(self.about_text_2, 1200)
+        self.about_text_3_x = self.get_x_to_place_image_at_center(self.about_text_3, 1200)
+        self.about_text_4_x = self.get_x_to_place_image_at_center(self.about_text_4, 1200)
+        self.about_text_5_x = self.get_x_to_place_image_at_center(self.about_text_5, 1200)
