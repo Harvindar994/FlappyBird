@@ -1887,3 +1887,10 @@ class GameMenu:
 
         # animation effacts.
         self.SliderEffact = SliderEffact(GameWindow)
+
+        self.bgImgIndex = 0
+        self.bgChangeTime = 0
+        self.current_time = 0
+        self.ResetBgChangeTime = True
+        self.CloseMenu = True
+        self.timeList = [0.1, 0.2, 0.3, 0.4, 0.5]
