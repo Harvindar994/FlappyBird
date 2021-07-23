@@ -1899,3 +1899,13 @@ class GameMenu:
         self.loading_about_components = True
         font_size = 20
         font_style = Font_sofiapro_light
+        self.about_text_1 = out_text_file(GameWindow, "This Game developed by Harvindar Singh in Python Programming Language Using PyGame Library.",
+                                    font_size, 0, 0, font_color, font_style, True)
+        self.about_text_2 = out_text_file(GameWindow, "I am passionate about my work so I like to work on different projects.",
+                                    font_size, 0, 0, font_color, font_style, True)
+        self.about_text_3 = out_text_file(GameWindow, "Visit on official website of brightgoal for more information. https://www.brightgoal.in/",
+                                    font_size, 0, 0, font_color, font_style, True)
+        self.about_text_4 = out_text_file(GameWindow, "if you want more projects like this project visit on the official store of brightgoal.",
+                                    font_size, 0, 0, font_color, font_style, True)
+        self.about_text_5 = out_text_file(GameWindow, "Store link : https://www.instamojo.com/Brightgoal/",
+                                          font_size, 0, 0, font_color, font_style, True)
