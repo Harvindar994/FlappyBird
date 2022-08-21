@@ -1,6 +1,9 @@
 # FlappyBird
  Flappy Bird Game in Python
 
+[Download game Video](https://github.com/Harvindar994/FlappyBird/raw/main/Preview/Preview%20Video.mp4)
+
+
 <img src="https://github.com/Harvindar994/FlappyBird/blob/main/Preview/Welcome%20Screen.jpg"/>
 <h5>Light Theme</h5>
 <img src="https://github.com/Harvindar994/FlappyBird/blob/main/Preview/Light%20Theme/Game%20Menu.jpg"/>
