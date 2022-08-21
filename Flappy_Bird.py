@@ -10,6 +10,7 @@ import threading
 import time
 import webbrowser
 
+
 def open_url(url):
     try:
         webbrowser.get('chrome').open_new(url)
@@ -32,7 +33,6 @@ def out_text_file(surface, text, size, x, y, color, font_file, return_img = Fals
     if return_img:
         return text_img
     surface.blit(text_img, [x, y])
-
 
 def fadeout(surface, page, x, y):
     path = os.path.join(DIR_TEMP_DATA, "welcome_screen.png")
@@ -65,7 +65,6 @@ def collision(maskFirst, maskSecond, maskFirstPos_x, maskFirstPos_y, maskSecondP
 	result = maskSecond.overlap(maskFirst, offset)
 	return result
 
-
 def getListOfFiles(basepath, include_basepath=True):
     paths = []
     if include_basepath:
@@ -82,10 +81,8 @@ def getListOfFiles(basepath, include_basepath=True):
                     paths.append(entry.name)
     return paths
 
-
 def closeGame():
     os._exit(0)
-
 
 def sortImagesPath(img_list, base_path, extantion='.png'):
     filePaths = []
@@ -102,6 +99,7 @@ def custom_out_text(surface, text, x, x1, y, color, size, f_file):
     put_point_x = put_point_x - (text_img.get_width() // 2)
     surface.blit(text_img, [put_point_x, y])
 
+
 # Sound effacts names.
 SOUND_BUTTON_CLICK = 1
 SOUND_DIE = 2
@@ -109,7 +107,6 @@ SOUND_HIT = 3
 SOUND_POINT = 4
 SOUND_WING = 5
 SOUND_BACKGROUND = 6
-
 
 class SoundManager:
     sounds = {}  # this dict will store all sound file which is loaded in the game. and any object of this class can access.
@@ -172,6 +169,7 @@ class SoundManager:
         else:
             return "FNF"
         # File Not Found
+
 
 class SequentialAnimation:
     def __init__(self, screen, img_dir, x, y, screen_width, screen_height, auto_postion_at_center=False, create_mask=False):
@@ -244,6 +242,7 @@ class Loader(SequentialAnimation):
             pygame.display.update()
             clock.tick(60)
         self.counter = 0
+
 
 class Bird(SoundManager):
     def __init__(self, screen, x, y, img_path, area):
@@ -337,6 +336,7 @@ class Bird(SoundManager):
                 self.blink = False
                 self.blink_start_time = None
                 self.bird_hidden_start_time = None
+        # blink effect system end.
 
         if not self.bird_hide:
             self.screen.blit(self.birds[self.counter], (self.x, self.y))
@@ -378,6 +378,7 @@ class Bird(SoundManager):
             self.play_sound(SOUND_WING)
             self.pushUpActive = True
 
+
 class PolePair:
     def __init__(self, screen, poles, x, gap_start_end):
         self.screen = screen
@@ -393,6 +394,7 @@ class PolePair:
     def show(self):
         self.screen.blit(self.TOP_POLE_IMG, [self.x, self.top_pole_y])
         self.screen.blit(self.BOTTOM_POLE_IMG, [self.x, self.bottom_pole_y])
+
 
 class PolePair_Manager(SoundManager):
     def __init__(self, screen, bird, poles_img, scroll_speed, area, poles_distance, gap_height):
@@ -453,6 +455,7 @@ class PolePair_Manager(SoundManager):
             self.LifePil_DropCounter = 0
             self.LifePil.LifePilUsed = False
 
+
     def get_gap_position(self):
         gap_height = random.randint(self.MIN_GAP_HEIGHT, self.MAX_GAP_HEIGHT)
         y = random.randint(self.AREA_Y + 50, (self.AREA_Y + self.AREA_HEIGHT) - (gap_height + 50))
@@ -488,7 +491,8 @@ class PolePair_Manager(SoundManager):
                     if not self.bird.blink:
                         self.bird.blink_start()
 
-        # checking collision with bottom pole.
+
+         # checking collision with bottom pole.
         if collision(self.BOTTOM_POLE_MASK, bird_mask, pole_pair.x, pole_pair.bottom_pole_y, self.bird.x, self.bird.y):
             if not self.bird.blink:
                 if not pole_pair_dict['collided']:
@@ -497,6 +501,7 @@ class PolePair_Manager(SoundManager):
                     pole_pair_dict['collided'] = True
                     if not self.bird.blink:
                         self.bird.blink_start()
+
 
 class ScrollingBackground:
     def __init__(self, screen, bird, ground, bottom_pole, top_pole, area):
@@ -544,12 +549,11 @@ class ScrollingBackground:
         return self.GROUND_Y
 
     def show(self):
-         """
+        """
             This section controlling the poles of game which scroll's with ground of the game.
         """
 
         self.PolePair_Manager.manage()
-
         """
             This section of code controlling the ground of game which continous scroll while playing game at the
             bottom side.
@@ -576,7 +580,6 @@ class ScrollingBackground:
             """
             self.PolePair_Manager.life.set_value(self.PolePair_Manager.life.value - 0.5)
 
-
 """
 initialisation of game window.
 """
@@ -588,7 +591,6 @@ window_y = 600
 environ['SDL_VIDEO_WINDOW_POS'] = str(int(infos.current_w / 2)-(window_x//2)) + ',' + str(int(infos.current_h / 2)-(window_y//2))
 pygame.display.set_caption("Flappy Bird")
 GameWindow = pygame.display.set_mode((window_x, window_y))
-
 """
 Here I am defining all global variable and paths of all images which i will use in this game
 """
@@ -624,6 +626,7 @@ PYIMG_MSG_BOX = pygame.image.load(IMG_MSG_BOX).convert_alpha()
 
 DIR_BIRD = "assets\\bird"
 clock = pygame.time.Clock()  # to control the speed of game.
+
 
 """
 Here i am defining dir paths where i will store file and create temp files.
@@ -690,6 +693,7 @@ class Score:
             return False
         except:
             return False
+
 
 class Setting:
     def __init__(self):
@@ -816,7 +820,6 @@ class Button(SoundManager):
     def __init__(self, surface, image, hover_img, x, y, caption_text='', press_effact=False, button_text=None,
                  button_text_size=28, button_text_color=(255, 255, 255), text_file=Font_Kollektif,
                  list_menu=None, command=None, perfect_collision_check=True):
-
         self.linked_list = list_menu
         self.surface = surface
         self.command = command
@@ -941,7 +944,6 @@ class Scroll_Button:
     def __init__(self,surface, x, x1, y, bar_thickness, pointer_img, pointer_hover_img = None, zero_value_pinter_img = None,
                  zero_value_pointer_hover_img = None, defult_value = None, text_color=WHITE_COLOR, filled_bar_color=LIGHT_PURPLE,
                  non_filled_bar_color=WHITE_COLOR):
-
         self.surface = surface
         self.x = x
         self.x1 = x1
@@ -1024,6 +1026,7 @@ class Scroll_Button:
                 else:
                     self.surface.blit(self.pointer_img, [self.pointer_x, self.pointer_y])
 
+
 class LifePil:
     def __init__(self, surface, sequence_images_dir, x, y, area, drop_speed=15):
         self.index = 0
@@ -1054,6 +1057,7 @@ class LifePil:
     def reset_animation(self):
         self.expired = False
         self.animation.y = 0
+
 
 class Message:
     def __init__(self, surface, rect, message='', text_size = 17, text_color = (255, 255, 255), text_align = 'center', font_file = Font_sofiapro_light):
@@ -1167,6 +1171,7 @@ class Message:
                 self.surface.blit(e, [x, start_point_y])
                 start_point_y += self.text_size+3
 
+
 """
 Creating msg box to show msg on screen
 """
@@ -1179,7 +1184,6 @@ def msg_box(msg):
     msg_box_img = PYIMG_MSG_BOX
     close_msg_box = False
     close_msg = False
-
     """
         Defining Variable For Msg Box Image Processing.
     """
@@ -1204,7 +1208,6 @@ def msg_box(msg):
 
     #  creating close button.
     closeButton = Button(GameWindow, ICON_CROSS_ORANGE, ICON_CROSS_WHITE, 774, 220, "close")
-
     while not close_msg_box:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -1240,6 +1243,7 @@ def msg_box(msg):
             closeButton.place()
         pygame.display.update()
 
+
 """
 Created this function for caption
 """
@@ -1247,7 +1251,6 @@ def caption(text, x, y, window_width = window_x, window_height = window_y, bk_co
     difrence_between_m_y = 16
     difrence_between_m_x = 7
     text_img = out_text_file(GameWindow, text, 12, 0, 0, BLACK_COLOR, Font_DroidSansMono, True)
-
     text_img = text_img.convert_alpha()
     rect_width = text_img.get_width()+6
     rect_height = text_img.get_height()+4
@@ -1270,6 +1273,7 @@ def caption(text, x, y, window_width = window_x, window_height = window_y, bk_co
 """
 Here I created a class of snow that will be falling down in background while playing the game.
 """
+
 
 class Snow:
     snow_imgs = [pygame.image.load(IMG_SNOW_1).convert_alpha(),
@@ -1298,9 +1302,12 @@ class Snow:
         else:
             self.x, self.y = self.default_position
 
+
 """
 snow fall class will manage the object's of Snow class.
 """
+
+
 class SnowFall:
     def __init__(self, window, area, snow_count = 200):
         self.x, self.y, self.width, self.height = area
@@ -1343,7 +1350,6 @@ class ProgressBar:
         self.text_x = x+width
         self.text_x1 = self.text_x+text_width+8
         self.text_y = (self.y+(self.height//2))-(text_height//2)
-
 
     def set_value(self, value):
         if value >= 0 and value <= 100:
@@ -1433,13 +1439,14 @@ class GameManager:
                             return "home"
                         if self.retry_button.collide(x, y, True):
                             return "retry"
-        self.screen.blit(background_image, [0, 0])
-        self.screen.blit(self.GameOver_background, (self.GameOver_background_x, self.GameOver_background_y))
-        custom_out_text(self.screen, str(self.PolePair_Manager.score), 431, 543, 300, WHITE_COLOR, 20, Font_Kollektif)
-        custom_out_text(self.screen, str(self.score.get_score()), 658, 770, 300, WHITE_COLOR, 20, Font_Kollektif)
-        self.home_button.place()
-        self.retry_button.place()
-        pygame.display.update()
+
+            self.screen.blit(background_image, [0, 0])
+            self.screen.blit(self.GameOver_background, (self.GameOver_background_x, self.GameOver_background_y))
+            custom_out_text(self.screen, str(self.PolePair_Manager.score), 431, 543, 300, WHITE_COLOR, 20, Font_Kollektif)
+            custom_out_text(self.screen, str(self.score.get_score()), 658, 770, 300, WHITE_COLOR, 20, Font_Kollektif)
+            self.home_button.place()
+            self.retry_button.place()
+            pygame.display.update()
 
     def manage_score(self):
         self.life.show()
@@ -1473,7 +1480,6 @@ class GameManager:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_p or event.key == pygame.K_ESCAPE:
                         control_force_stop_loop = False
-
 
 class DigitalClock:
     def __init__(self, position, font_size, dateFontSize = 20, show_date=True, font_color=WHITE_COLOR, font_file = Font_Quicksand_Regular, screen=GameWindow):
@@ -1593,26 +1599,21 @@ class GameMenu:
             if percentage > 4:
                 out_text_file(GameWindow, "Game development by", font_size, 55, status_y, WHITE_COLOR,
                               Font_Kollektif)
-
             status_y += font_size + 5
             if percentage > 5:
                 out_text_file(GameWindow, "Harvindar singh", font_size, 55, status_y, WHITE_COLOR,
                               Font_Kollektif)
-
-                status_y += font_size + 5
+            status_y += font_size + 5
             if percentage > 6:
                 out_text_file(GameWindow, "Loading status", font_size, 55, status_y, WHITE_COLOR,
                               Font_Kollektif)
-
             status_y += font_size + 5
             if percentage > 7:
                 out_text_file(GameWindow, "Loading menu components...", font_size, 55, status_y, WHITE_COLOR, Font_Kollektif)
-            
             status_y += font_size + 5
             if self.loading_about_components:
                 out_text_file(GameWindow, "Loading about components...", font_size, 55, status_y, WHITE_COLOR,
                               Font_Kollektif)
-
             status_y += font_size+5
             if self.loading_setting_components:
                 out_text_file(GameWindow, "Loading setting components...", font_size, 55, status_y, WHITE_COLOR, Font_Kollektif)
@@ -1646,6 +1647,8 @@ class GameMenu:
                 fadeout(GameWindow, self.Menu_fadeOutImage, 0, 0)
                 self.close_welcome_screen = False
 
+            pygame.time.Clock().tick()
+
     def theme_1(self):
         font_color = WHITE_COLOR
         self.bg = [pygame.image.load(IMG_GMENU_BACKGROUND_1_T1).convert_alpha(),
@@ -1657,7 +1660,6 @@ class GameMenu:
         self.text_Brightgoal = out_text_file(GameWindow, "Brightgoal", 60, 0, 0, WHITE_COLOR, Font_Quicksand_Regular, True)
         self.text_author_name = out_text_file(GameWindow, "By Harvindar singh", 25, 0, 0, WHITE_COLOR,
                                               Font_Quicksand_Regular, True)
-
         self.text_GameName = out_text_file(GameWindow, "Flappy Bird", 60, 0, 0, WHITE_COLOR, Font_Quicksand_Regular, True)
         self.text_GameName_x = self.get_x_to_place_image_at_center(self.text_GameName, 1200)
         self.logo_Brightgoal_x = self.get_x_to_place_image_at_center(self.logo_Brightgoal, 1200)
@@ -1668,40 +1670,31 @@ class GameMenu:
         self.PlayButton = Button(GameWindow, "assets\\GameMenu\\button\\play_black.png",
                                  "assets\\GameMenu\\button\\play_purple.png",
                                  170, 350)
-
         self.SettingButton = Button(GameWindow, "assets\\GameMenu\\button\\setting_black.png",
                                     "assets\\GameMenu\\button\\setting_purple.png",
                                     self.PlayButton.x+220, self.PlayButton.y)
-
         self.AboutButton = Button(GameWindow, "assets\\GameMenu\\button\\about_black.png",
                                   "assets\\GameMenu\\button\\about_purple.png",
                                   self.SettingButton.x+220, self.PlayButton.y)
-
         self.storeButton = Button(GameWindow, "assets\\GameMenu\\button\\store_black.png",
                                   "assets\\GameMenu\\button\\store_purple.png",
                                   self.AboutButton.x+220, self.PlayButton.y)
 
         self.twitterButton = Button(GameWindow, "assets\\GameMenu\\button\\twitter.png",
                                     None, 510, 465, press_effact=True)
-
         self.youtubeButton = Button(GameWindow, "assets\\GameMenu\\button\\youtube.png",
                                     None, self.twitterButton.x+50, self.twitterButton.y, press_effact=True)
-
         self.facebookButton = Button(GameWindow, "assets\\GameMenu\\button\\facebook.png",
                                      None, self.youtubeButton.x+50, self.twitterButton.y, press_effact=True)
-
         self.instaButton = Button(GameWindow, "assets\\GameMenu\\button\\insta.png",
                                   None, self.facebookButton.x+50, self.twitterButton.y, press_effact=True)
 
         # sort about text
         self.text_1 = out_text_file(GameWindow, "visit on official website for more information", 20, 0, 0, WHITE_COLOR,
                                             Font_sofiapro_light, True)
-
         self.officalWebsite = out_text_file(GameWindow, "www.brightgoal.in", 20, 0, 0, WHITE_COLOR,
                                             Font_sofiapro_light, True)
-
         self.text_1_x = self.get_x_to_place_image_at_center(self.text_1, 1200)
-
         self.officalWebsite_x = self.get_x_to_place_image_at_center(self.officalWebsite, 1200)
 
         self.digitalClock = DigitalClock((100, 60), 30, 17,font_file=Font_sofiapro_light)
@@ -1730,16 +1723,12 @@ class GameMenu:
         font_color = WHITE_COLOR
         self.about_text_1 = out_text_file(GameWindow, "This Game developed by Harvindar Singh in Python Programming Language Using PyGame Library.",
                                     font_size, 0, 0, font_color, font_style, True)
-
         self.about_text_2 = out_text_file(GameWindow, "I am passionate about my work so I like to work on different projects.",
                                     font_size, 0, 0, font_color, font_style, True)
-
         self.about_text_3 = out_text_file(GameWindow, "Visit on official website of brightgoal for more information. https://www.brightgoal.in/",
                                     font_size, 0, 0, font_color, font_style, True)
-
         self.about_text_4 = out_text_file(GameWindow, "if you want more projects like this project visit on the official store of brightgoal.",
                                     font_size, 0, 0, font_color, font_style, True)
-
         self.about_text_5 = out_text_file(GameWindow, "Store link : https://www.instamojo.com/Brightgoal/",
                                           font_size, 0, 0, font_color, font_style, True)
 
@@ -1764,25 +1753,17 @@ class GameMenu:
                                                    "assets\\GameMenu\\button\\Theme_1\\slider_purple.png",
                                                    non_filled_bar_color=font_color, text_color=font_color,
                                                    defult_value=self.SettingData.background_music_volume)
-
         self.setting_sound_effact = Scroll_Button(GameWindow, 380, 1000, 276, 4,
                                                   "assets\\GameMenu\\button\\Theme_1\\slider_black.png",
                                                   "assets\\GameMenu\\button\\Theme_1\\slider_purple.png",
                                                   non_filled_bar_color=font_color, text_color=font_color,
                                                   defult_value=self.SettingData.sound_effact_volume)
-
         self.text_theme = out_text_file(GameWindow, "Theme", 22, 0, 0, font_color, font_style, True)
         self.light_theme = RadioButton(GameWindow, "Light Theme", 22, "assets\\GameMenu\\button\\Theme_1\\radio.png",
                                        "assets\\GameMenu\\button\\Theme_1\\radio_active.png",
                                        "assets\\GameMenu\\button\\Theme_1\\radio_hover.png", 625, 320, "theme",
                                        True if self.SettingData.theme == 2 else False,
                                        font_style=font_style, text_color=font_color)
-
-        self.dark_theme = RadioButton(GameWindow, "Dark Theme", 22, "assets\\GameMenu\\button\\Theme_1\\radio.png",
-                                      "assets\\GameMenu\\button\\Theme_1\\radio_active.png",
-                                      "assets\\GameMenu\\button\\Theme_1\\radio_hover.png", 839, 320, "theme",
-                                      True if self.SettingData.theme == 1 else False,
-                                      font_style=font_style, text_color=font_color)
 
         self.dark_theme = RadioButton(GameWindow, "Dark Theme", 22, "assets\\GameMenu\\button\\Theme_1\\radio.png",
                                       "assets\\GameMenu\\button\\Theme_1\\radio_active.png",
@@ -1818,7 +1799,6 @@ class GameMenu:
         self.init_Game()
         self.loader_Black.active_state = False
 
-
     def theme_2(self):
         font_color = BLACK_COLOR
         font_style = Font_Quicksand_Regular
@@ -1841,28 +1821,22 @@ class GameMenu:
         self.PlayButton = Button(GameWindow, "assets\\GameMenu\\button\\play_black.png",
                                  "assets\\GameMenu\\button\\play_purple.png",
                                  170, 350)
-
         self.SettingButton = Button(GameWindow, "assets\\GameMenu\\button\\setting_black.png",
                                     "assets\\GameMenu\\button\\setting_purple.png",
                                     self.PlayButton.x+220, self.PlayButton.y)
-
         self.AboutButton = Button(GameWindow, "assets\\GameMenu\\button\\about_black.png",
                                   "assets\\GameMenu\\button\\about_purple.png",
                                   self.SettingButton.x+220, self.PlayButton.y)
-
         self.storeButton = Button(GameWindow, "assets\\GameMenu\\button\\store_black.png",
                                   "assets\\GameMenu\\button\\store_purple.png",
                                   self.AboutButton.x+220, self.PlayButton.y)
 
         self.twitterButton = Button(GameWindow, "assets\\GameMenu\\button\\twitter.png",
                                     None, 510, 465, press_effact=True)
-
         self.youtubeButton = Button(GameWindow, "assets\\GameMenu\\button\\youtube.png",
                                     None, self.twitterButton.x+50, self.twitterButton.y, press_effact=True)
-
         self.facebookButton = Button(GameWindow, "assets\\GameMenu\\button\\facebook.png",
                                      None, self.youtubeButton.x+50, self.twitterButton.y, press_effact=True)
-
         self.instaButton = Button(GameWindow, "assets\\GameMenu\\button\\insta.png",
                                   None, self.facebookButton.x+50, self.twitterButton.y, press_effact=True)
 
@@ -1872,7 +1846,6 @@ class GameMenu:
         # sort about text
         self.text_1 = out_text_file(GameWindow, "visit on official website for more information", 20, 0, 0, font_color,
                                             Font_sofiapro_light, True)
-
         self.officalWebsite = out_text_file(GameWindow, "www.brightgoal.in", 20, 0, 0, font_color,
                                             Font_sofiapro_light, True)
         self.text_1_x = self.get_x_to_place_image_at_center(self.text_1, 1200)
@@ -1880,7 +1853,6 @@ class GameMenu:
 
         self.digitalClock = DigitalClock((100, 60), 30, 17,font_file=Font_sofiapro_light, font_color=font_color)
         self.bird = Bird(GameWindow, 500, 70, "assets\\GameMenu\\menu\\Bird", (0, 0, 1200, 600))
-
         self.bird.gravity = 0
         self.bird.declineSpeed = 0
         self.bird.x = self.get_x_to_place_image_at_center(self.bird.birds[0], 1200)
@@ -1920,3 +1892,384 @@ class GameMenu:
                                        "assets\\GameMenu\\button\\back_purple.png", 1070, 58)
 
         # creating all component of setting.
+        self.loading_setting_components = True
+        font_style = Font_sofiapro_light
+        self.text_setting = out_text_file(GameWindow, "Setting", 60, 0, 0, font_color, Font_Quicksand_Regular, True)
+        self.text_setting_x = self.get_x_to_place_image_at_center(self.text_setting, 1200)
+        self.text_Music = out_text_file(GameWindow, "Background Music", 22, 0, 0, font_color, font_style, True)
+        self.text_sound_effact = out_text_file(GameWindow, "Sound Effact", 22, 0, 0, font_color, font_style, True)
+        self.setting_Volume_button = Scroll_Button(GameWindow, 380, 1000, 216, 4,
+                                                   "assets\\GameMenu\\button\\Theme_2\\slider_black.png",
+                                                   "assets\\GameMenu\\button\\Theme_2\\slider_purple.png",
+                                                   non_filled_bar_color=font_color, text_color=font_color,
+                                                   defult_value=self.SettingData.background_music_volume)
+        self.setting_sound_effact = Scroll_Button(GameWindow, 380, 1000, 276, 4,
+                                                  "assets\\GameMenu\\button\\Theme_2\\slider_black.png",
+                                                  "assets\\GameMenu\\button\\Theme_2\\slider_purple.png",
+                                                  non_filled_bar_color=font_color, text_color=font_color,
+                                                  defult_value=self.SettingData.sound_effact_volume)
+        self.text_theme = out_text_file(GameWindow, "Theme", 22, 0, 0, font_color, font_style, True)
+        self.light_theme = RadioButton(GameWindow, "Light Theme", 22, "assets\\GameMenu\\button\\Theme_2\\radio.png",
+                                       "assets\\GameMenu\\button\\Theme_2\\radio_active.png",
+                                       "assets\\GameMenu\\button\\Theme_2\\radio_hover.png", 625, 320, "theme",
+                                       True if self.SettingData.theme == 2 else False,
+                                       font_style=font_style, text_color=font_color)
+
+        self.dark_theme = RadioButton(GameWindow, "Dark Theme", 22, "assets\\GameMenu\\button\\Theme_2\\radio.png",
+                                      "assets\\GameMenu\\button\\Theme_2\\radio_active.png",
+                                      "assets\\GameMenu\\button\\Theme_2\\radio_hover.png", 839, 320, "theme",
+                                      True if self.SettingData.theme == 1 else False,
+                                      font_style=font_style, text_color=font_color)
+
+        self.text_game_sound = out_text_file(GameWindow, "Game Sound", 22, 0, 0, font_color, font_style, True)
+        self.sound_on = RadioButton(GameWindow, "On", 22, "assets\\GameMenu\\button\\Theme_2\\radio.png",
+                                      "assets\\GameMenu\\button\\Theme_2\\radio_active.png",
+                                      "assets\\GameMenu\\button\\Theme_2\\radio_hover.png", 786, 380, "game_sound",
+                                      self.SettingData.game_sound, font_style=font_style, text_color=font_color)
+
+        self.sound_off = RadioButton(GameWindow, "Off", 22, "assets\\GameMenu\\button\\Theme_2\\radio.png",
+                                     "assets\\GameMenu\\button\\Theme_2\\radio_active.png",
+                                     "assets\\GameMenu\\button\\Theme_2\\radio_hover.png", 930, 380, "game_sound",
+                                     True if not self.SettingData.game_sound else False,
+                                     font_style=font_style, text_color=font_color)
+
+        self.loading_store_components = True
+        self.loading_sound_effact = True
+        self.sound_manager = SoundManager()  # creating an object of sound_manager class this class will store all sound effact and background music.
+        self.sound_manager.load_sound(SOUND_BUTTON_CLICK, "assets\\sound\\sound_effacts\\button_click.wav", self.SettingData.sound_effact_volume*0.01)
+        self.sound_manager.load_sound(SOUND_DIE, "assets\\sound\\sound_effacts\\die.wav", self.SettingData.sound_effact_volume*0.01)
+        self.sound_manager.load_sound(SOUND_HIT, "assets\\sound\\sound_effacts\\hit.wav", self.SettingData.sound_effact_volume*0.01)
+        self.sound_manager.load_sound(SOUND_POINT, "assets\\sound\\sound_effacts\\point.wav", self.SettingData.sound_effact_volume*0.01)
+        self.sound_manager.load_sound(SOUND_WING, "assets\\sound\\sound_effacts\\wing.wav", self.SettingData.sound_effact_volume*0.01)
+        self.loading_background_music = True
+        self.sound_manager.load_sound(SOUND_BACKGROUND, "assets\\sound\\Theme_2\\background_music\\Climb Together.wav", self.SettingData.background_music_volume*0.01)
+        self.sound_manager.play_sound(SOUND_BACKGROUND, -1)
+        self.loading_game_components = True
+        self.init_Game()
+        self.loader_White.active_state = False
+
+    def game_component(self):
+        self.back_button = Button(GameWindow, "assets\\background\\back_button.png",
+                                  "assets\\background\\back_button_purple.png", 824, 26)
+    
+    def init_Game(self):
+        self.Game = GameManager()
+        self.Game.stop()
+        self.GamePaused = True
+
+    def playGame(self):
+        close_game = False
+        while not close_game:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    closeGame()
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if event.button == 1:
+                        x, y = event.pos
+                        if self.back_button.collide(x, y, True):
+                            close_game = True
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        close_game = True
+                    if event.key == pygame.K_UP or event.key == pygame.K_SPACE:
+                        self.Game.Bird.pushUp()
+                    if event.key == pygame.K_LEFT or event.key == pygame.K_l:
+                        self.Game.Bird.backMove_StopStart()
+                    if event.key == pygame.K_RIGHT or event.key == pygame.K_r:
+                        self.Game.Bird.forwardMove_StartStop()
+                    if event.key == pygame.K_p:
+                        self.Game.stop()
+                        self.GamePaused = True
+                    elif self.GamePaused:
+                        self.GamePaused = False
+                        self.Game.start()
+                if event.type == pygame.KEYUP:
+                    if event.key == pygame.K_UP or event.key == pygame.K_SPACE:
+                        self.Game.Bird.pushUp()
+                    if event.key == pygame.K_LEFT or event.key == pygame.K_l:
+                        self.Game.Bird.backMove_StopStart()
+                    if event.key == pygame.K_RIGHT or event.key == pygame.K_r:
+                        self.Game.Bird.forwardMove_StartStop()
+
+            value = self.Game.run()
+            if value == 'home':
+                close_game = True
+            if value == 'retry':
+                self.init_Game()
+            self.back_button.place()
+            pygame.display.update()
+            clock.tick(30)
+
+    def get_x_to_place_image_at_center(self, image, screen_width):
+        width = image.get_width()
+        x_position = (screen_width//2) - (width//2)
+        return x_position
+
+    def start_loader(self, type):
+        if type == 1:
+            self.loader_White.active_state = True
+            self.loader_White.start()
+        else:
+            self.loader_Black.active_state = True
+            self.loader_Black.start()
+
+    def setting(self):
+        global GameWindow
+        close_setting = True
+        while close_setting:
+            if self.ResetBgChangeTime:
+                self.bgChangeTime = random.randint(1, 3)
+                self.current_time = int(time.time())
+                self.ResetBgChangeTime = False
+            if time.time() - self.current_time >= self.bgChangeTime:
+                if self.bgImgIndex == 0:
+                    self.bgImgIndex = random.randint(1, 2)
+                    self.current_time = int(time.time())
+                    self.bgChangeTime = self.timeList[random.randint(0, 4)]
+                else:
+                    self.bgImgIndex = 0
+                    self.ResetBgChangeTime = True
+            for event in pygame.event.get():
+                self.setting_Volume_button.place(event)
+                self.setting_sound_effact.place(event)
+                if self.light_theme.place(event) or self.dark_theme.place(event):
+                    if self.light_theme.active_state:
+                        self.SettingData.theme = 2
+                        self.SettingData.update()
+                        self.SettingData.get()
+                        loader_thread = threading.Thread(target=self.start_loader, args=(1,))
+                        loader_thread.start()
+                        self.theme_2()
+                    else:
+                        self.SettingData.theme = 1
+                        self.SettingData.update()
+                        self.SettingData.get()
+                        loader_thread = threading.Thread(target=self.start_loader, args=(2,))
+                        loader_thread.start()
+                        self.theme_1()
+
+                if self.sound_off.place(event) or self.sound_on.place(event):
+                    if self.sound_off.active_state:
+                        self.SettingData.game_sound = False
+                        self.sound_manager.stop_sound()
+                    else:
+                        self.SettingData.game_sound = True
+                        self.sound_manager.play_sound(SOUND_BACKGROUND, -1)
+                    self.SettingData.update()
+
+                if event.type == pygame.QUIT:
+                    closeGame()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        close_setting = False
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if event.button == 1:
+                        x, y = event.pos
+                        if self.aboutBack_Button.collide(x, y, True):
+                            close_setting = False
+                        elif self.facebookButton.collide(x, y, True):
+                            open_url("https://www.facebook.com/brightgoal.in.Education")
+                        elif self.twitterButton.collide(x, y, True):
+                            open_url("https://twitter.com/BrightGoal_in")
+                        elif self.instaButton.collide(x, y, True):
+                            open_url("https://www.instagram.com/brightgoal.in/")
+                        elif self.youtubeButton.collide(x, y, True):
+                            open_url("https://www.youtube.com/channel/UCCEBsUxSW7PyyCYLw8cyhvA?")
+
+            GameWindow.blit(self.bg[int(self.bgImgIndex)], (0, 0))
+            self.snowFall.show()
+            GameWindow.blit(self.menuImg, (0, 0))
+
+            # Name and author name
+            # GameWindow.blit(self.logo_Brightgoal, (self.logo_Brightgoal_x, 60))
+            GameWindow.blit(self.text_setting, (self.text_setting_x, 70))
+            # GameWindow.blit(self.text_author_name, (self.text_author_name_x-15, 238))
+            self.digitalClock.show()
+
+            # back button placing.
+            self.aboutBack_Button.place()
+
+            # placing text.
+            GameWindow.blit(self.text_Music, (160, 200))
+            GameWindow.blit(self.text_sound_effact, (160, 260))
+            GameWindow.blit(self.text_theme, (160, 320))
+            GameWindow.blit(self.text_game_sound, (160, 380))
+
+            # placing setting buttons.
+            self.setting_Volume_button.place()
+            self.setting_sound_effact.place()
+            self.dark_theme.place()
+            self.light_theme.place()
+            self.sound_on.place()
+            self.sound_off.place()
+
+            # updating sound volume in setting.
+            if self.setting_Volume_button.move_pointer:
+                self.SettingData.background_music_volume = self.setting_Volume_button.value
+                self.sound_manager.set_volume(SOUND_BACKGROUND, self.setting_Volume_button.value*0.01)
+                self.SettingData.update()
+            if self.setting_sound_effact.move_pointer:
+                self.SettingData.sound_effact_volume = self.setting_sound_effact.value
+                self.sound_manager.set_volume(SOUND_BUTTON_CLICK, self.setting_sound_effact.value*0.01)
+                self.sound_manager.set_volume(SOUND_WING, self.setting_sound_effact.value * 0.01)
+                self.sound_manager.set_volume(SOUND_POINT, self.setting_sound_effact.value * 0.01)
+                self.sound_manager.set_volume(SOUND_HIT, self.setting_sound_effact.value * 0.01)
+                self.sound_manager.set_volume(SOUND_DIE, self.setting_sound_effact.value * 0.01)
+                self.SettingData.update()
+
+            # social media button placing.
+            self.twitterButton.place()
+            self.youtubeButton.place()
+            self.facebookButton.place()
+            self.instaButton.place()
+
+            # placing sort information about
+            GameWindow.blit(self.officalWebsite, (self.officalWebsite_x, 500))
+            GameWindow.blit(self.text_1, (self.text_1_x, 525))
+            pygame.display.update()
+            pygame.time.Clock().tick(30)
+
+    def about(self):
+        global GameWindow
+        close_about = True
+        while close_about:
+            if self.ResetBgChangeTime:
+                self.bgChangeTime = random.randint(1, 3)
+                self.current_time = int(time.time())
+                self.ResetBgChangeTime = False
+            if time.time() - self.current_time >= self.bgChangeTime:
+                if self.bgImgIndex == 0:
+                    self.bgImgIndex = random.randint(1, 2)
+                    self.current_time = int(time.time())
+                    self.bgChangeTime = self.timeList[random.randint(0, 4)]
+                else:
+                    self.bgImgIndex = 0
+                    self.ResetBgChangeTime = True
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    closeGame()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        close_about = False
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if event.button == 1:
+                        x, y = event.pos
+                        if self.aboutBack_Button.collide(x, y, True):
+                            close_about = False
+                        elif self.facebookButton.collide(x, y, True):
+                            open_url("https://www.facebook.com/brightgoal.in.Education")
+                        elif self.twitterButton.collide(x, y, True):
+                            open_url("https://twitter.com/BrightGoal_in")
+                        elif self.instaButton.collide(x, y, True):
+                            open_url("https://www.instagram.com/brightgoal.in/")
+                        elif self.youtubeButton.collide(x, y, True):
+                            open_url("https://www.youtube.com/channel/UCCEBsUxSW7PyyCYLw8cyhvA?")
+
+            GameWindow.blit(self.bg[int(self.bgImgIndex)], (0, 0))
+            self.snowFall.show()
+            GameWindow.blit(self.menuImg, (0, 0))
+
+            # Name and author name
+            GameWindow.blit(self.logo_Brightgoal, (self.logo_Brightgoal_x, 60))
+            GameWindow.blit(self.text_Brightgoal, (self.text_Brightgoal_x, 170))
+            GameWindow.blit(self.text_author_name, (self.text_author_name_x-15, 238))
+            self.digitalClock.show()
+
+            # placing text.
+            about_text_y = 290
+            GameWindow.blit(self.about_text_1, (self.about_text_1_x, about_text_y))
+            about_text_y += 30
+            GameWindow.blit(self.about_text_2, (self.about_text_2_x, about_text_y))
+            about_text_y += 30
+            GameWindow.blit(self.about_text_3, (self.about_text_3_x, about_text_y))
+            about_text_y += 30
+            GameWindow.blit(self.about_text_4, (self.about_text_4_x, about_text_y))
+            about_text_y += 30
+            GameWindow.blit(self.about_text_5, (self.about_text_5_x, about_text_y))
+
+            # back button placing.
+            self.aboutBack_Button.place()
+
+            # social media button placing.
+            self.twitterButton.place()
+            self.youtubeButton.place()
+            self.facebookButton.place()
+            self.instaButton.place()
+
+            # placing sort information about
+            GameWindow.blit(self.officalWebsite, (self.officalWebsite_x, 500))
+            GameWindow.blit(self.text_1, (self.text_1_x, 525))
+            pygame.display.update()
+            pygame.time.Clock().tick(30)
+
+    def show(self):
+        global GameWindow
+        while self.CloseMenu:
+            if self.ResetBgChangeTime:
+                self.bgChangeTime = random.randint(1, 3)
+                self.current_time = int(time.time())
+                self.ResetBgChangeTime = False
+            if time.time() - self.current_time >= self.bgChangeTime:
+                if self.bgImgIndex == 0:
+                    self.bgImgIndex = random.randint(1, 2)
+                    self.current_time = int(time.time())
+                    self.bgChangeTime = self.timeList[random.randint(0, 4)]
+                else:
+                    self.bgImgIndex = 0
+                    self.ResetBgChangeTime = True
+
+            # event handling.
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    self.CloseMenu = False
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    x, y = event.pos
+                    if self.AboutButton.collide(x, y, True):
+                        self.about()
+                    elif self.PlayButton.collide(x, y, True):
+                        self.init_Game()
+                        self.playGame()
+                    elif self.SettingButton.collide(x, y, True):
+                        self.setting()
+                    elif self.storeButton.collide(x, y, True):
+                        open_url("https://www.instamojo.com/Brightgoal/")
+                    elif self.facebookButton.collide(x, y, True):
+                        open_url("https://www.facebook.com/brightgoal.in.Education")
+                    elif self.twitterButton.collide(x, y, True):
+                        open_url("https://twitter.com/BrightGoal_in")
+                    elif self.instaButton.collide(x, y, True):
+                        open_url("https://www.instagram.com/brightgoal.in/")
+                    elif self.youtubeButton.collide(x, y, True):
+                        open_url("https://www.youtube.com/channel/UCCEBsUxSW7PyyCYLw8cyhvA?")
+
+            GameWindow.blit(self.bg[int(self.bgImgIndex)], (0, 0))
+            self.snowFall.show()
+            self.SliderEffact.show()
+            GameWindow.blit(self.menuImg, (0, 0))
+
+            # Name and author name
+            self.bird.show()
+            GameWindow.blit(self.text_GameName, (self.text_GameName_x, 180))
+            GameWindow.blit(self.text_author_name, (self.text_author_name_x, 248))
+            self.digitalClock.show()
+
+            # placing all button in menu.
+            self.PlayButton.place()
+            self.SettingButton.place()
+            self.AboutButton.place()
+            self.storeButton.place()
+
+            # social media button placing.
+            self.twitterButton.place()
+            self.youtubeButton.place()
+            self.facebookButton.place()
+            self.instaButton.place()
+
+            # placing sort information about
+            GameWindow.blit(self.officalWebsite, (self.officalWebsite_x, 500))
+            GameWindow.blit(self.text_1, (self.text_1_x, 525))
+            pygame.display.update()
+            pygame.time.Clock().tick(30)
+
+
+Menu = GameMenu()
